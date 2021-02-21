@@ -1,0 +1,19 @@
+name: build
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 'Building...'
+      uses: lumicia/hugo-deploy@v1
+      env:
+        DEPLOY_REPO: lumicia/lumicia.github.io
+        DEPLOY_BRANCH: build
+        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        TZ: Asia/Shanghai
