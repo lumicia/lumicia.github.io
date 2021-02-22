@@ -2,7 +2,7 @@
 # Site Settings
 
 baseURL = "https://lumicia.github.io"
-title = "lumicia's blog"
+title = "lumicia"
 languageCode = "en"
 hasCJKLanguage = false
 # Copyright information (Markdown supported)
@@ -12,7 +12,7 @@ copyright = "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0
 theme = "meme"
 
 # `hugo new` automatically opened text editor
-newContentEditor = "typora.exe"
+newContentEditor = "Typora.exe"
 
 # i18n
 defaultContentLanguage = "en"
@@ -341,7 +341,7 @@ uglyURLs = false
     siteLogo = "/icons/apple-touch-icon.png"
     # Note: used for JSON-LD, Open Graph
 
-    siteDescription = "MemE is a powerful and highly customizable GoHugo theme for personal blogs."
+    siteDescription = "lumicia"
     # Note: used for HTML head meta, JSON-LD,
     #       Open Graph, Atom, RSS
 
@@ -349,7 +349,7 @@ uglyURLs = false
     # ATTENTION: keep this format, change
     #            the number
 
-    # siteTwitter = "lumicia"
+    # siteTwitter = ""
     # Note: used for Twitter Cards
 
 
@@ -1221,7 +1221,7 @@ uglyURLs = false
     iconBetweenYearAndAuthor = "heart"
     iconColor = "#f06292"
     # Enable heartbeat animation?
-    iconAnimation = true
+    iconAnimation = false
 
     # Display links to Hugo and MemE?
     displayPoweredBy = true
