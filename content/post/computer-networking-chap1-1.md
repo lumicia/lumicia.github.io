@@ -1,5 +1,5 @@
 ---
-title: "计算机网络笔记 Chap1 1"
+title: "计算机网络笔记 Chap1 01：互联网"
 date: 2021-04-04T21:10:12+08:00
 categories: ["Computer Networking"]
 tags: ["计算机网络：自顶向下方法"]
@@ -20,7 +20,7 @@ draft: false
 
 一个分组从发送端系统到接收端系统经过的通信链路和分组交换机称为经过网络的路由（route）或路径（path）。
 
-端系统通过互联网服务提供商（ISP）接入互联网。
+端系统通过互联网服务提供商 ISP（Internet service provider）接入互联网。
 
 端系统、分组交换机等通过运行协议（protocol）来控制互联网中信息的发送和接收。
 
