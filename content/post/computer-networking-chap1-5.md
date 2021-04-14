@@ -3,7 +3,7 @@ title: "计算机网络 Chap1 05：网络安全"
 date: 2021-04-14T09:19:35+08:00
 categories: ["Computer Networking"]
 tags: ["计算机网络：自顶向下方法"]
-draft: true
+draft: false
 ---
 
 如今互联网极大地改变了人们的生活方式，给人们带来了许多便利。但如同硬币的两面，互联网也可能带来麻烦：
