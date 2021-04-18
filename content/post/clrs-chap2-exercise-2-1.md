@@ -39,7 +39,7 @@ for i = 1 to A.length
 return NIL
 ```
 
-**loop invariant**：每次 `for` 循环开始迭代时，子数组 $A[1..i-1]$ 由均不等于 $v$ 的元素组成。
+**Loop invariant**：每次 `for` 循环开始迭代时，子数组 $A[1..i-1]$ 由均不等于 $v$ 的元素组成。
 
 **Initialization**：证明循环不变式在循环开始前为真。循环开始前 $i=1$。子数组为空，因此为真。
 

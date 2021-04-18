@@ -1,5 +1,5 @@
 ---
-title: "计算机网络 Chap2 01："
+title: "计算机网络 Chap2 01：网络应用"
 date: 2021-04-15T10:47:54+08:00
 categories: ["Computer Networking"]
 tags: ["计算机网络：自顶向下方法"]
@@ -14,6 +14,8 @@ draft: false
 C/S 架构中服务器（server）为其他客户端（client）提供服务。客户端之间不会直接通信。服务器具有一个固定的 IP 地址。数据中心（data center）可放置大量的主机，创建一个强大的虚拟服务器。
 
 P2P 架构中应用与其他间歇性连接的主机（称为 peer）直接通信。P2P 架构中最吸引人的一个特性是自扩展性（self-scalability）。
+
+<!--more-->
 
 一个单独运行的程序就是一个进程（process）。
 
