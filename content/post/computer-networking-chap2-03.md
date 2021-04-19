@@ -34,7 +34,7 @@ HTTP 请求报文的第一行称为请求行（request line）。接下来的行
 
 `DELETE` 方法用于删除 Web 服务器中的对象。
 
-首部行例子：`Host`、`Connection`、`User-agent`、`Accept-language`。
+首部行例子：`Host:`、`Connection:`、`User-agent:`、`Accept-language:`。
 
 ## HTTP 响应报文
 
@@ -52,7 +52,7 @@ HTTP 请求报文的第一行称为请求行（request line）。接下来的行
 - 状态码；
 - 对应状态消息。
 
-首部行例子：`Connection`、`Date`、`Server`、`Last-Modified`、`Content-Length`、`Content-type`。
+首部行例子：`Connection:`、`Date:`、`Server:`、`Last-Modified:`、`Content-Length:`、`Content-type:`。
 
 状态码例子：
 
