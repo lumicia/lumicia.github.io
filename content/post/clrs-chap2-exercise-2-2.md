@@ -1,7 +1,7 @@
 ---
 title: "算法导论 Chap2 练习题 2.2"
 date: 2021-04-17T11:21:42+08:00
-categories: ["Algorithms"]
+categories: ["Algorithm"]
 tags: ["算法导论"]
 draft: false
 ---

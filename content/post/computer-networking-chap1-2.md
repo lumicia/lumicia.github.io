@@ -1,5 +1,5 @@
 ---
-title: "计算机网络笔记 Chap1 02：互联网边缘和核心"
+title: "计算机网络 Chap1 02：互联网边缘和核心"
 date: 2021-04-07T08:22:47+08:00
 categories: ["Computer Networking"]
 tags: ["计算机网络：自顶向下方法"]

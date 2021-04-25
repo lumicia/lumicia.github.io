@@ -1,14 +1,12 @@
 ---
-title: "计算机网络笔记 Chap1 01：互联网"
+title: "计算机网络 Chap1 01：互联网"
 date: 2021-04-04T21:10:12+08:00
 categories: ["Computer Networking"]
 tags: ["计算机网络：自顶向下方法"]
 draft: false
 ---
 
-连接到互联网的设备称为主机（host）或端系统（end system）。
-
-端系统之间通过通信链路（communication link）和分组交换机（packet switch）的网络相连接。
+连接到互联网的设备称为主机（host）或端系统（end system）。端系统之间通过通信链路（communication link）和分组交换机（packet switch）的网络相连接。
 
 <!--more-->
 
