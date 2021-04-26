@@ -6,12 +6,16 @@ tags: ["算法导论"]
 draft: false
 ---
 
-> 2.1-1
+## 2.1-1
+
 > Using Figure 2.2 as a model, illustrate the operation of INSERTION-SORT on the array $A = \langle 31,41,59,26,41,58\rangle$.
+
+<!--more-->
 
 略。
 
-> 2.1-2
+## 2.1-2
+
 > Rewrite the INSERTION-SORT procedure to sort into nonincreasing instead of non-decreasing order.
 
 ```
@@ -26,7 +30,8 @@ for j = 2 to A.length
 
 修改成 ` A[i] < key` 即可。
 
-> 2.1-3
+## 2.1-3
+
 > Consider the **_searching problem_**:
 > **Input**: A sequence of $n$ numbers $A = \langle a_1,a_2,\dots,a_n\rangle$ and a value $v$.
 > **Output**: An index $i$ such that $v=A[i]$ or the special value $\text{NIL}$ if $v$ does not appear in $A$.
@@ -47,8 +52,9 @@ return NIL
 
 **Termination**：证明循环不变式在循环终止时仍为真。让循环结束的条件为 $i>A.length=n$，确切地说此时必定有 $i=n+1$。将 $i$ 替换为 $n+1$，则子数组 $A[1..n]$ 由均不等于 $v$ 的元素组成，因此返回 $\text{NIL}$。观察到子数组 $A[1..n]$ 等于原来的整个数组，可以得出结论原数组中不包含等于 $v$ 的元素。故算法正确。
 
+## 2.1-4
 
-> 2.1-4
+
 > Consider the problem of adding two $n$-bit binary integers, stored in two $n$-element arrays $A$ and $B$. The sum of the two integers should be stored in binary form in an $(n + 1)$-element array $C$. State the problem formally and write pseudocode for adding the two integers.
 
 从两个都是 $n$ 位的二进制数字，得二者最左边的位数字为 1，相加后得到的数字必定是 $n+1$ 位的。于是 $C$ 的数组长度是 $n+1$。
@@ -80,7 +86,7 @@ $$
 
 
 ```
-C = Array[A.length + 1]
+let C[A.length + 1] be new array
 carry = 0
 for i = 1 to A.length
 	// remainder

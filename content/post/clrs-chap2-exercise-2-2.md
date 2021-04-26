@@ -6,12 +6,16 @@ tags: ["算法导论"]
 draft: false
 ---
 
-> 2.2-1
+## 2.2-1
+
 > Express the function $n^3/1000-100n^2-100n+3$ in terms of $\Theta$-notation.
+
+<!--more-->
 
 $\Theta(n^3)$。
 
-> 2.2-2
+## 2.2-2
+
 > Consider sorting $n$ numbers stored in array $A$ by first finding the smallest element of $A$ and exchanging it with the element in $A[1]$. Then find the second smallest element of $A$, and exchange it with $A[2]$. Continue in this manner for the first $n-1$ elements of $A$. Write pseudocode for this algorithm, which is known as **_selection sort_**. What loop invariant does this algorithm maintain? Why does it need to run for only the first $n-1$ elements, rather than for all $n$ elements? Give the best-case
 > and worst-case running times of selection sort in $\Theta$-notation.
 
@@ -36,7 +40,8 @@ for i = 1 to A.length - 1
 
 3、选择排序最好的情况（数组已排序）和最坏的情况（数组逆序）都需要将外循环和内循环的每一条语句执行一遍，所以都需要 $\Theta(n^2)$ 时间。
 
-> 2.2-3
+## 2.2-3
+
 > Consider linear search again (see Exercise 2.1-3). How many elements of the input sequence need to be checked on the average, assuming that the element being searched for is equally likely to be any element in the array? How about in the worst case? What are the average-case and worst-case running times of linear search in $\Theta$-notation? Justify your answers.
 
 1、分析在数组 $A[a_1,a_2,\dots,a_n]$ 中进行线性查找的平均情况，第 1 个元素需要查找 1 个元素，第 2 个元素查找 2 个，以此类推，第 n 个元素查找 n 个。总共查找 n 次，因此平均个数为 $\cfrac{1+2+\dots+n}n=\cfrac{n+1}2$ 个。
@@ -45,7 +50,8 @@ for i = 1 to A.length - 1
 
 3、平均情况和最坏情况的运行时间都是 $\Theta(n)$。
 
-> 2.2-4
+## 2.2-4
+
 > How can we modify almost any algorithm to have a good best-case running time? 
 
 没看懂问题 (￣﹏￣；)，看了下答案，应该是通过添加一个特殊的情况，如果输入符合这个特例，则输出预先计算的结果，这样就可以得到最好情况的运行时间了。

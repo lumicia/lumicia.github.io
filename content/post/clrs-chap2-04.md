@@ -35,19 +35,19 @@ n1 = q - p + 1
 n2 = r - q
 let L[1..n1 + 1] and R[1..n2 + 1] be new arrays
 for i = 1 to n1
-	L[i] = A[p + i - 1]
+    L[i] = A[p + i - 1]
 for j = 1 to n2
-	R[j] = A[q + j]
+    R[j] = A[q + j]
 L[n1 + 1] = infinite
 R[n2 + 1] = infinite
 i = 1
 j = 1
 for k = p to r
-	if L[i] <= R[j]
-		A[k] = L[i]
-		i = i + 1
-	else A[k] = R[j]
-		i = i + 1
+    if L[i] <= R[j]
+        A[k] = L[i]
+        i = i + 1
+    else A[k] = R[j]
+        i = i + 1
 ```
 
 `MERGE` 的运行时间是 $\Theta(n)$。
@@ -56,10 +56,10 @@ for k = p to r
 
 ```
 if p < r
-	q = ceil((p + r) / 2)
-	MERGE-SORT(A, p, q)
-	MERGE-SORT(A, q + 1, r)
-	MERGE(A, p, q, r)
+    q = ceil((p + r) / 2)
+    MERGE-SORT(A, p, q)
+    MERGE-SORT(A, q + 1, r)
+    MERGE(A, p, q, r)
 ```
 
 算法包含对自身的递归调用时，可以用递归等式（recurrence equation）或递归式（recurrence）来描述运行时间。
