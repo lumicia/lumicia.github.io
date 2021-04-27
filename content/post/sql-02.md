@@ -12,7 +12,7 @@ draft: false
 
 ### 检索单列
 
-```sql
+```mysql
 SELECT prod_name
 FROM Products;
 ```
@@ -28,7 +28,7 @@ FROM Products;
 
 ### 检索多列
 
-```sql
+```mysql
 SELECT prod_id, prod_name, prod_price
 FROM Products;
 ```
@@ -37,7 +37,7 @@ FROM Products;
 
 ### 检索所有列
 
-```sql
+```mysql
 SELECT *
 FROM Products;
 ```
@@ -46,7 +46,7 @@ FROM Products;
 
 ### 检索不同的值
 
-```sql
+```mysql
 SELECT DISTINCT vend_id
 FROM Products;
 ```
@@ -55,7 +55,7 @@ FROM Products;
 
 ### 限制结果
 
-```sql
+```mysql
 SELECT prod_name
 FROM Products
 LIMIT 5;
@@ -65,7 +65,7 @@ MySQL 中使用 `LIMIT` 子句来限制检索结果。上面的代码限制返�
 
 可以使用 `OFFSET` 继续获取接下来的数据。
 
-```sql
+```mysql
 SELECT prod_name
 FROM Products
 LIMIT 5 OFFSET 5;
@@ -79,7 +79,7 @@ LIMIT 5 OFFSET 5;
 
 ### 注释
 
-```sql
+```mysql
 SELECT prod_name -- this is a comment
 FROM Products;
 ```
