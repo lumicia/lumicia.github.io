@@ -6,7 +6,7 @@ tags: ["MySQL"]
 draft: false
 ---
 
-## 高级数据过滤
+## AND、OR 和 IN 运算符
 
 使用逻辑运算符精细控制过滤条件。
 
