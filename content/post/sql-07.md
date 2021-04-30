@@ -24,10 +24,10 @@ FROM Vendors
 ORDER BY vend_name;
 ```
 
-MySQL 中使用 `Concat()` 函数来拼接值。此时可能需要删除数据右侧多余的空格，可以使用 `Rtrim()` 函数来完成：
+MySQL 中使用 `Concat()` 函数来拼接值。此时可能需要删除数据右侧多余的空格，可以使用 `RTrim()` 函数来完成：
 
 ```mysql
-SELECT Concat(Rtrim(vend_name), ' (', Rtrim(vend_country), ')')
+SELECT Concat(RTrim(vend_name), ' (', RTrim(vend_country), ')')
 FROM Vendors
 ORDER BY vend_name;
 ```
@@ -37,7 +37,7 @@ ORDER BY vend_name;
 别名是一个字段或值的替换名。
 
 ```mysql
-SELECT Concat(Rtrim(vend_name), ' (', Rtrim(vend_country), ')') AS vend_title
+SELECT Concat(RTrim(vend_name), ' (', RTrim(vend_country), ')') AS vend_title
 FROM Vendors
 ORDER BY vend_name;
 ```
