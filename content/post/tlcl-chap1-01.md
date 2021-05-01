@@ -2,7 +2,7 @@
 title: "Linux 命令行 Chap1 shell"
 date: 2021-04-24T20:16:50+08:00
 categories: ["Linux"]
-tags: ["command line"]
+tags: ["The Linux Command Line"]
 draft: false
 ---
 

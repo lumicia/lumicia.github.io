@@ -1,5 +1,5 @@
 ---
-title: "Sql 09：汇总数据"
+title: "SQL 09：汇总数据"
 date: 2021-04-29T21:35:54+08:00
 categories: ["SQL"]
 tags: ["MySQL"]
@@ -11,6 +11,8 @@ draft: false
 我们经常需要汇总数据而不用把它们实际检索出来。如确定表中行数、获得表中行的集合的和、找出表中列的最大、最小和平均值。
 
 聚集函数（aggregate function）用于数据汇总，在行的集合上运算来计算和返回单个值。
+
+<!--more-->
 
 ```mysql
 SELECT AVG(prod_price) AS avg_price

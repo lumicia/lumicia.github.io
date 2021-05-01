@@ -1,8 +1,8 @@
 ---
-title: "Sql 04：过滤数据"
+title: "SQL 04：过滤数据"
 date: 2021-04-27T19:49:00+08:00
 categories: ["SQL"]
-tags: ["MySQL "]
+tags: ["MySQL"]
 draft: false
 ---
 
@@ -15,6 +15,8 @@ WHERE prod_price = 3.49;
 ```
 
 使用 `WHERE` 子句指定搜索条件来过滤数据。
+
+<!--more-->
 
 `WHERE` 支持的运算符：
 

@@ -1,5 +1,5 @@
 ---
-title: "Sql 10：分组数据"
+title: "SQL 10：分组数据"
 date: 2021-04-29T21:54:29+08:00
 categories: ["SQL"]
 tags: ["MySQL"]
@@ -17,6 +17,8 @@ GROUP BY vend_id;
 ```
 
 `GROUP BY` 子句用于创建分组。
+
+<!--more-->
 
 ## 过滤分组
 

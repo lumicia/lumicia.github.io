@@ -2,7 +2,7 @@
 title: "Linux 命令行 Chap2 文件系统导航"
 date: 2021-04-25T10:22:01+08:00
 categories: ["Linux"]
-tags: ["command line"]
+tags: ["The Linux Command Line"]
 draft: false
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Sql 08：数据处理函数"
+title: "SQL 08：数据处理函数"
 date: 2021-04-29T15:38:37+08:00
 categories: ["SQL"]
 tags: ["MySQL"]
@@ -11,6 +11,8 @@ draft: false
 要注意相同功能的函数在不同 DBMS 中的名称、语法的区别。
 
 `Convert()` 函数用于数据类型转换。
+
+<!--more-->
 
 ### 文本处理函数
 

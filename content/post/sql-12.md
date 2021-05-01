@@ -1,5 +1,5 @@
 ---
-title: "Sql 12：联结表"
+title: "SQL 12：联结表"
 date: 2021-04-30T22:51:24+08:00
 categories: ["SQL"]
 tags: ["MySQL"]
@@ -15,6 +15,8 @@ SELECT vend_name, prod_name, prod_price
 FROM Vendors, Products
 WHERE Vendors.vend_id = Products.vend_id;
 ```
+
+<!--more-->
 
 联结多个表：
 

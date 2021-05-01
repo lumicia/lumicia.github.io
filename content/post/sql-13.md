@@ -1,5 +1,5 @@
 ---
-title: "Sql 13：创建高级联结"
+title: "SQL 13：创建高级联结"
 date: 2021-04-30T22:58:33+08:00
 categories: ["SQL"]
 tags: ["MySQL"]
@@ -15,6 +15,8 @@ WHERE C.cust_id = O.cust_id
 AND OI.order_num = O.order_num
 AND prod_id = 'RGAN01';
 ```
+
+<!--more-->
 
 ## 使用不同的联结类型
 

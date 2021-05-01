@@ -1,8 +1,8 @@
 ---
-title: "Sql 03：排序检索数据"
+title: "SQL 03：排序检索数据"
 date: 2021-04-27T16:15:43+08:00
 categories: ["SQL"]
-tags: ["MySQL "]
+tags: ["MySQL"]
 draft: false
 ---
 
@@ -15,6 +15,8 @@ ORDER BY prod_name;
 ```
 
 使用 `ORDER BY` 子句排序检索到的数据。
+
+<!--more-->
 
 注意：
 

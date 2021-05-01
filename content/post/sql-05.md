@@ -1,5 +1,5 @@
 ---
-title: "Sql 05：高级数据过滤"
+title: "SQL 05：高级数据过滤"
 date: 2021-04-28T09:07:15+08:00
 categories: ["SQL"]
 tags: ["MySQL"]
@@ -9,6 +9,8 @@ draft: false
 ## AND、OR 和 IN 运算符
 
 使用逻辑运算符精细控制过滤条件。
+
+<!--more-->
 
 ### AND 运算符
 

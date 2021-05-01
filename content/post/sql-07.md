@@ -1,5 +1,5 @@
 ---
-title: "Sql 07：创建计算字段"
+title: "SQL 07：创建计算字段"
 date: 2021-04-28T22:02:04+08:00
 categories: ["SQL"]
 tags: ["MySQL"]
@@ -13,6 +13,8 @@ draft: false
 此时需要计算字段来处理数据。计算字段并不存在于数据库表之中。计算字段是运行过程中在 `SELECT` 语句中创建的。
 
 字段（field）和列（column）的意义相同。
+
+<!--more-->
 
 ### 拼接字段
 

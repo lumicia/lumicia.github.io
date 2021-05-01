@@ -1,5 +1,5 @@
 ---
-title: "Sql 02：检索数据"
+title: "SQL 02：检索数据"
 date: 2021-04-27T15:03:34+08:00
 categories: ["SQL"]
 tags: ["MySQL"]
@@ -9,6 +9,8 @@ draft: false
 ## SELECT 语句
 
 `SELECT` 语句用于检索表数据。必须至少指定想选择什么和从哪儿选择。
+
+<!--more-->
 
 ### 检索单列
 
