@@ -1,5 +1,5 @@
 ---
-title: "Fluent Python Chap15：正确重载运算符"
+title: "Fluent Python Chap16：正确重载运算符"
 date: 2021-06-04T16:53:09+08:00
 categories: ["Python"]
 tags: ["Fluent Python"]
