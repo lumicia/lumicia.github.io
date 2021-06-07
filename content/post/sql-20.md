@@ -1,5 +1,5 @@
 ---
-title: "Sql 20：管理事务处理"
+title: "SQL 20：管理事务处理"
 date: 2021-05-03T07:31:02+08:00
 categories: ["SQL"]
 tags: ["MySQL"]

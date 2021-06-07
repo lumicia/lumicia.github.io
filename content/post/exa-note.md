@@ -1,7 +1,7 @@
 ---
-title: "exa 选项参数"
+title: "exa 基础"
 date: 2021-05-27T22:35:43+08:00
-categories: ["Linux Command"]
+categories: ["Linux"]
 tags: ["exa"]
 draft: false
 ---
