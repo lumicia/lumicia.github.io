@@ -8,17 +8,19 @@ draft: false
 
 Python 提供了几个方式来构建仅包含几个字段的简单类，类没有或只有非常少的功能。Python 通过 `dataclass` 装饰器来支持这种称为「数据类」的模式。
 
-<!--more-->
-
-三个不同的类构建器来编写数据类：
+有三个不同的类构建器来编写数据类：
 
 - `collections.namedtuple`
-- `typing.NamedTuple`：Python 3.5 中引入
-- `@dataclass.dataclass`：Python 3.7 中引入
+- `typing.NamedTuple`
+- `@dataclass.dataclass`
 
-`collections.namedtuple` 和 `typing.NamedTyple` 创建 `tuple` 的子类，因此实例是不可变的。
+<!--more-->
 
-`@dataclass` 默认得到可变的类。添加 `frozen=True` 可以让实例变成不可变的。
+数据类的构建器会自动提供必需的`__init__`、`__repr__`、`__eq__`方法，以及其他有用的特性。
+
+`collections.namedtuple` 和 `typing.NamedTyple` 会创建 `tuple` 的子类，因此实例是不可变的。
+
+`@dataclass` 默认得到可变的类。在其后加括号并添加 `frozen=True` 可以让实例变成不可变的。
 
 `typing.NamedTyple` 和 `dataclass` 支持常规的 `class` 语句语法。
 
@@ -26,12 +28,12 @@ Python 提供了几个方式来构建仅包含几个字段的简单类，类没�
 
 获取字段名称和默认值：
 
-- 具名元组类的元数据位于 `._fields` 和 `._fields_defaults` 类 attribute 中；
+- 具名元组类的元数据位于 `._fields` 和 `._fields_defaults` 类属性中；
 - `dataclass` 装饰类中相同的元数据可以通过 `dataclasses` 模块的 `fields` 函数获得，返回一个 `Field` 对象的元组。
 
-由 `typing.NamedTuple` 和 `dataclass` 定义的类，它的字段到类注解的映射存储在 `__annotations__` 类 attribute中。
+由 `typing.NamedTuple` 和 `dataclass` 定义的类，它的字段到类注解的映射存储在 `__annotations__` 类属性中。
 
-实例 attribute 替换：
+实例属性替换：
 
 - 具名元组 `x` 调用 `x._replace(**kwargs)`；
 - `dataclass` 装饰类调用模块级别的函数 `dataclasses.replace(x, **kwargs)`。
@@ -77,10 +79,10 @@ var_name: some_type
 
 字段选项函数 `field()` 中的 `default_factory` 参数可以提供一个函数、类或任何其他可调用对象，每次在数据类的实例创建时，用零个参数调用来创建一个默认值。
 
-通过 `@dataclass` 生成的 `__init__` 方法只取传给或赋值给它们的参数（如果没有则取默认值）作为实例字段中的实例 attribute。如果需要初始化实例以外还要做别的事情，可以提供一个 `__post_init__` 方法。
+通过 `@dataclass` 生成的 `__init__` 方法只取传给或赋值给它们的参数（如果没有则取默认值）作为实例字段中的实例属性。如果需要初始化实例以外还要做别的事情，可以提供一个 `__post_init__` 方法。
 
 `__post_init__` 方法通常用于验证和计算基于其他字段的字段值。
 
-伪类型 `typing.ClassVar` 使用 `[]` 符号来设置变量类型，并声明变量为类 attribute。
+伪类型 `typing.ClassVar` 使用 `[]` 符号来设置变量类型，并声明变量为类属性。
 
 如果需要给 `__init__` 传入非实例字段的参数（称为 init-only variable），使用 `dataclasses` 模块中的伪类型 `InitVar`，语法类似于 `typing.ClassVar`。
