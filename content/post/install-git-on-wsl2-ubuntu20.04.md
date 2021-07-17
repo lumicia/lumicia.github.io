@@ -1,8 +1,8 @@
 ---
 title: "在 WSL2 Ubuntu20.04 上安装最新版本的 Git"
 date: 2021-06-30T09:26:47+08:00
-categories: ["Git", "Linux"]
-tags: ["git"]
+categories: ["Linux"]
+tags: ["Git"]
 draft: false
 ---
 
