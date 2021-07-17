@@ -22,33 +22,31 @@ draft: false
 ```
 n1 = q - p + 1
 n2 = r - q
-let L[1..n1 + 1] and R[1..n2 + 1] be new arrays
+let L[1..n1] and R[1..n2] be new arrays
 for i = 1 to n1
 	L[i] = A[p + i - 1]
 for j = 1 to n2
 	R[j] = A[q + j]
 i = 1
 j = 1
-for k = p to r
-	if i > n1
-		A[k] = R[j]
-		j = j + 1
-	else if j > n2
-		A[k] = L[i]
-		i = i + 1
-	else if L[i] <= R[j]
-		A[k] = L[i]
-		i = i + 1
-	else
-		A[k] = R[j]
-		j = j + 1
+k = p
+while i < n1 and j < n2
+    if L[i] < R[j]
+        A[k] = L[i]
+        i = i + 1
+    else
+        A[k] = R[j]
+        j = j + 1
+    k = k + 1
+if j == n2
+    A[k..r +] = L[i..n1]
 ```
 
 ## 2.3-3
 
 > Use mathematical induction to show that when n is an exact power of 2, the solution of the recurrence
 > $$
-> T(n)=\begin{cases} 
+> T(n)=\begin{cases}
 > 2 & \text{if}\ n=2,\\\\
 > 2T(n/2)+n & \text{if}\ n=2^k,\ \text{for}\ k>1
 > \end{cases}
@@ -100,12 +98,12 @@ while lo < hi
         return mid
     else if v > A[mid]
         lo = mid + 1
-    else 
+    else
         hi = mid - 1
 return NIL
 ```
 
-迭代式：`RECURSIVE-BINARY-SEARCH(A, v, lo, hi)`
+递归式：`RECURSIVE-BINARY-SEARCH(A, v, lo, hi)`
 
 ```
 if lo > hi
@@ -115,7 +113,7 @@ if lo > hi
         return mid
     else if v > A[mid]
         return RECURSIVE-BINARY-SEARCH(A, v, mi + 1, hi)
-    else 
+    else
         return RECURSIVE-BINARY-SEARCH(A, v, lo, mid - 1)
 ```
 
