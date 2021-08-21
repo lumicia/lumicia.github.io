@@ -40,8 +40,8 @@ for i = 1 to n1
     L[i] = A[p + i - 1]
 for j = 1 to n2
     R[j] = A[q + j]
-L[n1 + 1] = infinite
-R[n2 + 1] = infinite
+L[n1 + 1] = INFINITE
+R[n2 + 1] = INFINITE
 i = 1
 j = 1
 for k = p to r
@@ -49,7 +49,7 @@ for k = p to r
         A[k] = L[i]
         i = i + 1
     else A[k] = R[j]
-        i = i + 1
+        j = j + 1
 ```
 
 第 1-2 行 `n1` 和 `n2` 分别表示子数组 `A[p..q]` 和 `A[q + 1..r]` 的长度。
@@ -58,7 +58,7 @@ for k = p to r
 
 第 4-7 行将 `A[p..q]` 和 `A[q + 1..r]` 的元素依次拷贝到 `L` 和 `R` 中。
 
-第 8-9 行分别设置 `L` 和 `R` 的尾元素为值为 $\infin$ 的哨兵。
+第 8-9 行分别设置 `L` 和 `R` 的尾元素为值为 $\infin$（`INFINITE`）的哨兵。
 
 第 10-11 行分别设置两个标志，起始指向子数组的首元素。
 
@@ -91,25 +91,14 @@ if p < r
 Python 实现：
 
 ```python
-import math
-
-def merge(a: list, p: int, q: int, r: int):
-    n1 = q - p + 1
-    n2 = r - q
-    L = [0 for i in range(n1)]
-    R = [0 for i in range(n2)]
-
-    for i in range(n1):
-        L[i] = a[p + i]
-
-    for j in range(n2):
-        R[j] = a[q + j + 1]
-
+def merge(a: list[int], p: int, q: int, r: int):
+    left = a[p: q + 1]
+    right = a[q + 1: r + 1]
     i = j = 0
     k = p
 
-    while i < n1 and j < n2:
-        if L[i] < R[j]:
+    while i < len(left) and j < len(right):
+        if L[i] <= R[j]:
             a[k] = L[i]
             i += 1
         else:
@@ -117,12 +106,12 @@ def merge(a: list, p: int, q: int, r: int):
             j += 1
         k += 1
 
-    if j == n2:
+    if j == len(right):
         a[k:r + 1] = L[i:]
 
-def merge_sort(a: list, p: int, r: int):
+def merge_sort(a: list[int], p: int, r: int):
     if p < r:
-        q = math.floor((p + r) / 2)
+        q = (p + r) // 2
         merge_sort(a, p, q)
         merge_sort(a, q + 1, r)
         merge(a, p, q, r)

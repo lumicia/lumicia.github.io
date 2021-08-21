@@ -85,6 +85,10 @@ T(n - 1) + \Theta(n) &\ \text{if}\ n>1.
 $$
 递推式的结果是 $\Theta(n^2)$。
 
+递归式插入排序的关键操作是「合并」步骤中将 $A[n]$ 插入到已排序数组 $A[1..n - 1]$ 中。这一过程用辅助函数 `insert(A, n)` 表示。
+
+只要向排序主函数 `insertion_sort_recursive(A, n)` 传递的数组 $A$ 长度大于 0 ，就可以递归调用它自身，然后调用 `insert(A, n)` 合并。
+
 ## 2.3-5
 
 > Referring back to the searching problem (see Exercise 2.1-3), observe that if the sequence $A$ is sorted, we can check the midpoint of the sequence against $v$ and eliminate half of the sequence from further consideration. The **_binary search_** algorithm repeats this procedure, halving the size of the remaining portion of the sequence each time. Write pseudocode, either iterative or recursive, for binary search. Argue that the worst-case running time of binary search is $\Theta(\lg n)$.
@@ -92,11 +96,11 @@ $$
 迭代式：`ITERATIVE-BINARY-SEARCH(A, v, lo, hi)`
 
 ```
-while lo < hi
+while lo <= hi
     mid = floor((lo + hi) / 2)
-    if v == A[mid]
+    if A[mid] == v
         return mid
-    else if v > A[mid]
+    else if A[mid] 
         lo = mid + 1
     else
         hi = mid - 1
@@ -108,13 +112,13 @@ return NIL
 ```
 if lo > hi
     return NIL
-    mid = floor((lo + hi) / 2)
-    if v == A[mid]
-        return mid
-    else if v > A[mid]
-        return RECURSIVE-BINARY-SEARCH(A, v, mi + 1, hi)
-    else
-        return RECURSIVE-BINARY-SEARCH(A, v, lo, mid - 1)
+mid = floor((lo + hi) / 2)
+if A[mid] == v
+    return mid
+else if A[mid] < v
+    return RECURSIVE-BINARY-SEARCH(A, v, mi + 1, hi)
+else
+    return RECURSIVE-BINARY-SEARCH(A, v, lo, mid - 1)
 ```
 
 算法每次都将 $v$ 和数组中点元素相比较，从而将搜索范围减半。
