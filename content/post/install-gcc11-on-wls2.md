@@ -69,7 +69,21 @@ sudo update-alternatives --config gcc
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/gcc-11.1.0/lib64
 ```
 
+---
 
+VS Code 可能检测到`#include`错误，需要更新头文件位置。`Ctrl+Shift+P`打开控制台，输入`json`，找到 `c_cpp_properties.json`文件，在`"includePath"`中加入：
+
+```json
+"/usr/local/gcc-11.1.0/include/c++/11.1.0",
+"/usr/local/gcc-11.1.0/include/c++/11.1.0/backward",
+"/usr/local/gcc-11.1.0/lib/gcc/x86_64-pc-linux-gnu/11.1.0/include",
+"/usr/local/include",
+"/usr/local/gcc-11.1.0/include/c++/11.1.0/x86_64-pc-linux-gnu",
+"/usr/local/gcc-11.1.0/include",
+"/usr/include"
+```
+
+---
 
 用旧版本的GDB调试可能报错，因为GCC11.1开始要求支持C++11的编译器来编译，所以需要安装新版本的GDB：
 
