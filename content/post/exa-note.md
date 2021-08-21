@@ -1,5 +1,5 @@
 ---
-title: "exa 基础"
+title: "exa 笔记"
 date: 2021-05-27T22:35:43+08:00
 categories: ["Linux"]
 tags: ["exa"]
