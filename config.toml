@@ -96,7 +96,7 @@ uglyURLs = false
     # Name
     name = "lumicia"
     # Email
-    email = "zs.xie@outlook.com"
+    email = "zuoshengxie@outlook.com"
     # Motto or introduction
     motto = "Viva La Vida"
     # Avatar
@@ -199,7 +199,7 @@ uglyURLs = false
     #     post = "home"
     [[menu.main]]
         url = "/posts/"
-        name = "Posts"
+        name = "Archives"
         weight = 2
         pre = "internal"
         post = "archive"
@@ -940,9 +940,9 @@ uglyURLs = false
     # Post title, post subtitle, list title, year and month title of the list, related posts title, previous/next post title, header of table, term/name in a definition list
     fontFamilyTitle = "'Microsoft YaHei', 'Comfortaa', sans-serif"
     # Headings, toc title
-    fontFamilyHeadings = "'Comfortaa', sans-serif"
+    fontFamilyHeadings = "'Microsoft YaHei', 'Comfortaa', sans-serif"
     # Code, superscript, post meta info, post updated badge, post gitinfo, minimal footer, busuanzi site view counter
-    fontFamilyCode = "'Source Code Pro', monospace"
+    fontFamilyCode = "'JetBrainsMono Nerd Font Mono', 'Source Code Pro', monospace"
     # Blockquotes
     fontFamilyQuote = ""
     # Table of contents
