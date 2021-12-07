@@ -239,7 +239,7 @@ ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstok
     [params.header.title]
       # URL of the LOGO
       # LOGO 的 URL
-      logo = ""
+      logo = "https://cdn.jsdelivr.net/gh/lumicia/blog-images/imgs/202112061756587.png"
       # title name
       # 标题名称
       name = "lumicia"
