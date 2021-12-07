@@ -1,19 +1,9 @@
-[submodule "themes/meme"]
-	path = themes/meme
-	url = https://github.com/reuixiy/hugo-theme-meme.git
-
 [submodule "public"]
 	path = public
 	url = https://github.com/lumicia/lumicia.github.io
 	branch = master
 [submodule "hugo-theme-even"]
 	path = hugo-theme-even
-	url = https://github.com/olOwOlo/hugo-theme-even
-[submodule "themes/jane"]
-	path = themes/jane
-	url = https://github.com/xianmin/hugo-theme-jane
-[submodule "themes/even"]
-	path = themes/even
 	url = https://github.com/olOwOlo/hugo-theme-even
 [submodule "themes/FeelIt"]
 	path = themes/FeelIt
