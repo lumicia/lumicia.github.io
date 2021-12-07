@@ -174,7 +174,7 @@ ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstok
         rss = 10
         # 主页个人信息
         [languages.zh-cn.params.home.profile]
-          enable = true
+          enable = false
           # Gravatar 邮箱，用于优先在主页显示的头像
           gravatarEmail = ""
           # 主页显示头像的 URL
@@ -239,7 +239,7 @@ ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstok
     [params.header.title]
       # URL of the LOGO
       # LOGO 的 URL
-      logo = "https://cdn.jsdelivr.net/gh/lumicia/blog-images/imgs/202112061756587.png"
+      logo = ""
       # title name
       # 标题名称
       name = "lumicia"
