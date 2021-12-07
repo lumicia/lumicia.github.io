@@ -10,8 +10,6 @@ draft: false
 
 当我们写完程序后，通常会编写测试来检查程序是否产生预期的结果。如果结果和预期一致，则认为程序能正常完成任务。但是有限的测试用例无法保证程序所使用的算法在其他情况下是否仍然得到正确的结果。因此我们需要证明算法的正确性。
 
-<!--more-->
-
 循环不变式（loop invariant）是用于证明循环的循环体在程序执行前后都为真的谓词。需要证明循环不变式的三条性质：
 
 - 初始化：循环的第一次迭代之前，循环不变式为真；
@@ -42,12 +40,12 @@ def insertion_sort(a: list[int]) -> None:
          a[i + 1] = key
 ```
 
-与 `A[j]` 相比，变量 `key` 可以让当前要插入的元素更直观。
+与 `a[j]` 相比，变量 `key` 可以让当前要插入的元素更直观。
 
 插入排序的关键在 `while` 循环。`while` 循环在已排序的子数组 `a[:j]` 中从前向后寻找元素插入位置，其判断条件与 `key` 的大小有关：
 
-- `key` 不大于子数组的最小元素，那么即使遍历到第一个元素也不会有比 `key` 更小的了，所以当 `i = -1` 时停止 `while` 循环，在数组首元素 `a[0]` 的位置插入 `key`。
-- `key` 大于子数组的最小元素，那就表示有元素小于 `key`，所以当 `a[i]` 小于 `key` 时停止 `while` 循环，在该元素下一位置 `a[i + 1]` 插入 `key`。
+- 若 `key` 不大于子数组的最小元素，那么即使遍历到第一个元素也不会有比它更小的了。因此当 `i = -1` 时停止 `while` 循环，在 `a[0]` 的位置插入 `key`。
+- 若 `key` 大于子数组的最小元素，那就表示有元素小于它。因此当 `a[i]` 小于 `key` 时停止 `while` 循环，在该元素下一位置 `a[i + 1]` 插入 `key`。
 
 ## 算法分析
 
@@ -92,7 +90,7 @@ def insertion_sort(a: list[int]) -> None:
 2. 解决：使用归并排序递归地排序两个子序列。
 3. 合并：将两个已排序子序列合并得到完成排序的原序列。
 
-归并排序的关键是「合」这一步，将两个已排序的序列合并。用辅助函数 `merge` 表示这个过程。
+归并排序的关键是「合并」这一步，将两个已排序的序列合并。用辅助函数 `merge` 表示这个过程。
 
 ```python
 def merge(a: list[int | float], p: int, q: int, r: int) -> None:
@@ -115,7 +113,7 @@ def merge(a: list[int | float], p: int, q: int, r: int) -> None:
 
 `merge` 首先将两个子数组复制到 `left` 和 `right` 数组中，然后分别添加  `float('inf')` 到 `left` 和 `right` 的末尾，用无限作为哨兵。然后在 `for` 循环中比较 `left` 和 `right` 中元素的大小，按序复制回数组 `a[p:r]` 中。`merge` 需要 $\Theta(n)$ 时间，其中 $n = r - p + 1$，表示合并元素的总数。
 
-现在可以将归并排序的三个步骤用主函数 `merge_sort` 来表示了：
+现在可以将归并排序的三个步骤用函数 `merge_sort` 来表示了：
 
 ```python
 def merge_sort(a: list[int | float], p: int, r: int) -> None:
@@ -153,6 +151,7 @@ def merge(a: list[int], p: int, q: int, r: int) -> None:
     if j == len(right):
         a[k : r + 1] = left[i:]
 
+        
 def merge_sort(a: list[int], p: int, r: int) :
     if p < r:
         q = (p + r) // 2
