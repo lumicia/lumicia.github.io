@@ -193,7 +193,7 @@ ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstok
         [languages.zh-cn.params.home.posts]
           enable = true
           # 主页每页显示文章数量
-          paginate = 6
+          paginate = 20
           # display image-preview
           imagePreview = true
 [params]
@@ -239,7 +239,8 @@ ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstok
     [params.header.title]
       # URL of the LOGO
       # LOGO 的 URL
-      logo = "https://cdn.jsdelivr.net/gh/lumicia/blog-images/imgs/202112061756587.png"
+      # logo = "https://cdn.jsdelivr.net/gh/lumicia/blog-images/imgs/202112061756587.png"
+      # logo = "/images/logo.png"
       # title name
       # 标题名称
       name = "lumicia"
@@ -349,7 +350,7 @@ ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstok
     # 是否显示原始 Markdown 文档内容的链接
     linkToMarkdown = true
     # whether to show link to improve the article
-    improveArticle = "https://github.com/lumicia/lumicia.github.io/master/tree/content/post"
+    # improveArticle = "https://github.com/lumicia/lumicia.github.io/master/tree/content/"
     # whether to show the full text content in RSS
     # 是否在 RSS 中显示全文内容
     rssFullText = false
