@@ -2,7 +2,7 @@
 title: "算法导论 Chap4：分治策略"
 date: 2021-04-10T09:48:50+08:00
 categories: ["Algorithm"]
-tags: ["CLRS"]
+tags: ["CLRS", "Python"]
 draft: false
 ---
 

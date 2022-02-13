@@ -2,7 +2,7 @@
 title: "算法导论 Chap6：堆、堆排序和优先级队列"
 date: 2021-04-16T09:53:52+08:00
 categories: ["Algorithm"]
-tags: ["CLRS"]
+tags: ["CLRS", "Python"]
 draft: false
 ---
 
