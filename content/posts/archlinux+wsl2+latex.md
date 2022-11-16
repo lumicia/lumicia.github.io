@@ -29,6 +29,9 @@ sudo pacman -S perl cpanminus perl-file-homedir
 配置路径和缩进格式：
 
 ```bash
+"[latex]": {
+    "editor.formatOnSave": true,
+},
 "latex-workshop.latexindent.path": "/usr/bin/latexindent",
 "latex-workshop.latexindent.args": [
     "-c",
