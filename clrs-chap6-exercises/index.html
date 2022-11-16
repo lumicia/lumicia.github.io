@@ -1,0 +1,196 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>算法导论 Chap6 习题 - lumicia</title><meta name=description content="lumicia"><meta property="og:title" content="算法导论 Chap6 习题"><meta property="og:description" content="6.1 6.1-1 每层都完全填满的二叉堆第 $i$ 层元素个数是 $2^{i - 1}$。 由几何级数公式 $A.5$，高度为 $h$ 的堆中元素个数最多为 $\displaystyle \sum_{i = 1}^{h + 1} 2^{i - 1} = \cfrac{2^{h + 1} - 1}{2 -"><meta property="og:type" content="article"><meta property="og:url" content="https://lumicia.github.io/clrs-chap6-exercises/"><meta property="og:image" content="https://lumicia.github.io/logo.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-04-22T13:10:05+08:00"><meta property="article:modified_time" content="2021-12-27T15:30:10+08:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://lumicia.github.io/logo.png"><meta name=twitter:title content="算法导论 Chap6 习题"><meta name=twitter:description content="6.1 6.1-1 每层都完全填满的二叉堆第 $i$ 层元素个数是 $2^{i - 1}$。 由几何级数公式 $A.5$，高度为 $h$ 的堆中元素个数最多为 $\displaystyle \sum_{i = 1}^{h + 1} 2^{i - 1} = \cfrac{2^{h + 1} - 1}{2 -"><meta name=application-name content="lumicia"><meta name=apple-mobile-web-app-title content="lumicia"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://lumicia.github.io/clrs-chap6-exercises/><link rel=prev href=https://lumicia.github.io/clrs-chap8/><link rel=stylesheet href=/css/page.min.css><link rel=stylesheet href=/css/home.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"算法导论 Chap6 习题","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/lumicia.github.io\/clrs-chap6-exercises\/"},"image":[{"@type":"ImageObject","url":"https:\/\/lumicia.github.io\/images\/avatar.webp","width":512,"height":512}],"genre":"posts","keywords":"CLRS","wordcount":3906,"url":"https:\/\/lumicia.github.io\/clrs-chap6-exercises\/","datePublished":"2021-04-22T13:10:05+08:00","dateModified":"2021-12-27T15:30:10+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"lumicia","logo":{"@type":"ImageObject","url":"https:\/\/lumicia.github.io\/images\/avatar.webp","width":512,"height":512}},"author":{"@type":"Person","name":"lumicia"},"description":""}</script></head><body data-header-desktop=fixed data-header-mobile=auto><script>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=lumicia>lumicia</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/><i class='fa fa-archive'></i> 归档 </a><a class=menu-item href=/tags/><i class='fa fa-tags'></i> 标签 </a><a class=menu-item href=/categories/><i class='fa fa-folder-open'></i> 分类 </a><a class=menu-item href=/categories/documentation/><i class='fa fa-book'></i> 文档 </a><a class=menu-item href=/about/><i class='fa fa-user'></i> 关于 </a><a class=menu-item href=https://github.com/lumicia title=GitHub rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw'></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
+<a href=# class="search-button search-toggle" id=search-toggle-desktop title=搜索><i class="fas fa-search fa-fw"></i></a>
+<a href=# class="search-button search-clear" id=search-clear-desktop title=清空><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a class=menu-item href=/index.xml title=RSS><i class="fas fa-rss fa-fw" title=RSS></i> </a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=lumicia>lumicia</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
+<a href=# class="search-button search-toggle" id=search-toggle-mobile title=搜索><i class="fas fa-search fa-fw"></i></a>
+<a href=# class="search-button search-clear" id=search-clear-mobile title=清空><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=# class=search-cancel id=search-cancel-mobile>取消</a></div><a class=menu-item href=/posts/ title><i class='fa fa-archive'></i>归档</a><a class=menu-item href=/tags/ title><i class='fa fa-tags'></i>标签</a><a class=menu-item href=/categories/ title><i class='fa fa-folder-open'></i>分类</a><a class=menu-item href=/categories/documentation/ title><i class='fa fa-book'></i>文档</a><a class=menu-item href=/about/ title><i class='fa fa-user'></i>关于</a><a class=menu-item href=https://github.com/lumicia title=GitHub rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw'></i></a><div class=menu-item><a href=/index.xml title=RSS><i class="fas fa-rss fa-fw" title=RSS></i></a>
+<span>&nbsp;|&nbsp;</span><a href=javascript:void(0); class=theme-switch title=切换主题>
+<i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single" data-toc=enable><div class=single-card><h2 class="single-title animated flipInX">算法导论 Chap6 习题</h2><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://github.com/lumicia title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>lumicia</a></span>&nbsp;<span class=post-category>出版于 <a href=/categories/algorithm/><i class="far fa-folder fa-fw"></i>Algorithm</a></span></div><div class=post-meta-line><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-04-22>2021-04-22</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3906 字</span>&nbsp;
+<span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟</span>&nbsp;</div></div><hr><div class="details toc" id=toc-static data-kept><div class="details-summary toc-title"><span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#61>6.1</a><ul><li><a href=#61-1>6.1-1</a></li><li><a href=#61-2>6.1-2</a></li><li><a href=#61-3>6.1-3</a></li><li><a href=#61-4>6.1-4</a></li><li><a href=#61-5>6.1-5</a></li><li><a href=#61-6>6.1-6</a></li><li><a href=#61-7>6.1-7</a></li></ul></li><li><a href=#62>6.2</a><ul><li><a href=#62-1>6.2-1</a></li><li><a href=#62-2>6.2-2</a></li><li><a href=#62-3>6.2-3</a></li><li><a href=#62-4>6.2-4</a></li><li><a href=#62-5>6.2-5</a></li><li><a href=#62-6>6.2-6</a></li></ul></li><li><a href=#63>6.3</a><ul><li><a href=#63-1>6.3-1</a></li><li><a href=#63-2>6.3-2</a></li><li><a href=#63-3>6.3-3</a></li></ul></li><li><a href=#64>6.4</a><ul><li><a href=#64-1>6.4-1</a></li><li><a href=#64-2>6.4-2</a></li><li><a href=#64-3>6.4-3</a></li><li><a href=#64-4>6.4-4</a></li><li><a href=#64-5-star>6.4-5 $\star$</a></li></ul></li><li><a href=#65>6.5</a><ul><li><a href=#65-1>6.5-1</a></li><li><a href=#65-2>6.5-2</a></li><li><a href=#65-3>6.5-3</a></li><li><a href=#65-4>6.5-4</a></li><li><a href=#65-5>6.5-5</a></li><li><a href=#65-6>6.5-6</a></li><li><a href=#65-7>6.5-7</a></li><li><a href=#65-8>6.5-8</a></li><li><a href=#65-9>6.5-9</a></li></ul></li><li><a href=#思考题>思考题</a><ul><li><a href=#6-1>6-1</a></li><li><a href=#6-2>6-2</a></li><li><a href=#6-3>6-3</a></li></ul></li></ul></nav></div></div><div class=content id=content><h2 id=61>6.1</h2><h3 id=61-1>6.1-1</h3><p>每层都完全填满的二叉堆第 $i$ 层元素个数是 $2^{i - 1}$。</p><p>由几何级数公式 $A.5$，高度为 $h$ 的堆中元素个数最多为 $\displaystyle \sum_{i = 1}^{h + 1} 2^{i - 1} = \cfrac{2^{h + 1} - 1}{2 - 1} = 2^{h + 1} - 1$，最少为 $1 + \displaystyle \sum_{i = 1}^h 2^{i - 1} = 1 + \cfrac{2^h - 1}{2 - 1} = 2^h$。</p><h3 id=61-2>6.1-2</h3><p>设该堆的高度为 $h$，由 6.1-1 有 $2^h \leqslant n \leqslant 2^{h + 1} - 1$。</p><p>两边取对数得 $\lg(n + 1) - 1 \leqslant h \leqslant \lg n$。</p><p>故高度为 $\lfloor \lg n \rfloor$。</p><h3 id=61-3>6.1-3</h3><p>假设该子树中存在一个非根结点的最大元素，则它一定大于它的父结点，这违背了最大堆性质，因此这样的结点不存在。故子树中最大元素一定位于根结点。</p><h3 id=61-4>6.1-4</h3><p>假如最小元素所在结点有子结点，则违背最大堆性质，因此最小元素一定位于叶结点。</p><h3 id=61-5>6.1-5</h3><p>对于一个已排序的数组 $A$ 中的元素 $A[i]$，一定有 $A[\text{PARENT}(i)] \leqslant A[i]$，其中 $i > 1$，满足最小堆性质，所以 $A$ 是最小堆。</p><h3 id=61-6>6.1-6</h3><p>不是。$A[9] = 7$ 的父结点 $A[\text{PARENT}(9)] = 6$，不满足最大堆性质。</p><h3 id=61-7>6.1-7</h3><p>对于下标为 $\lfloor n / 2 \rfloor + 1$ 的结点，假设它有左子结点，则左子结点下标为：</p><div>$$
+\begin{aligned}
+\text{LEFT}(\lfloor n / 2 \rfloor + 1) & = 2(\lfloor n / 2 \rfloor + 1) \\
+& > 2(n / 2 + 1) - 2 \\
+& = n + 2 - 2 \\
+& = n
+\end{aligned}
+$$</div>因为下标为 $n$ 的结点一定是堆的最后一个结点，而它的左子结点下标大于 $n$，所以不存在。故下标为 $\lfloor n / 2 \rfloor + 1$ 的结点是叶结点。从而下标大于 $\lfloor n / 2 \rfloor + 1$ 的结点也都是叶结点。<p>接着证明它是第一个叶结点。考察它的前一个结点，即下标为 $\lfloor n / 2 \rfloor$ 的结点。同理可推出当 $n$ 为偶数时，该结点的左子结点下标是 $n$；$n$ 为奇数时，该结点的右子结点下标是 $n$，也就是说该结点是堆中最后一个叶结点的父结点，因此该结点不是叶结点。从而下标 $\lfloor n / 2 \rfloor + 1$ 是堆的第一个叶结点。</p><p>堆的叶结点总数为 $n - (\lfloor n / 2 \rfloor + 1) + 1 = \lceil n / 2 \rceil$。</p><h2 id=62>6.2</h2><h3 id=62-1>6.2-1</h3><p>略。</p><h3 id=62-2>6.2-2</h3><p><code>MIN-HEAPIFY(A, i)</code>：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>l = LEFT(i)
+</span></span><span class=line><span class=cl>r = RIGHT(i)
+</span></span><span class=line><span class=cl>if l &lt;= A.heap_size and A[l] &lt; A[i]
+</span></span><span class=line><span class=cl>	smallest = l
+</span></span><span class=line><span class=cl>else smallest = i
+</span></span><span class=line><span class=cl>if r &lt;= A.heap_size and A[r] &lt; A[smallest]
+</span></span><span class=line><span class=cl>	smallest = r
+</span></span><span class=line><span class=cl>if smallest != r
+</span></span><span class=line><span class=cl>	exchange A[i] with A[smallest]
+</span></span><span class=line><span class=cl>	MIN-HEAPIFY(A, smallest)
+</span></span></code></pre></td></tr></table></div></div><p>运行时间和 <code>MAX-HEAPIFY</code> 相同，也是 $O(\lg n)$。</p><h3 id=62-3>6.2-3</h3><p>没有影响，函数直接返回。</p><h3 id=62-4>6.2-4</h3><p>此时，该结点是叶结点，因此没有影响，函数直接返回。</p><h3 id=62-5>6.2-5</h3><p><code>MAX-HEAPIFY-ITERATIVE(A, i)</code>：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>while true
+</span></span><span class=line><span class=cl>    l = LEFT(i)
+</span></span><span class=line><span class=cl>    r = RIGHT(i)
+</span></span><span class=line><span class=cl>    if l &lt;= A.heap_size and A[l] &gt; A[i]
+</span></span><span class=line><span class=cl>    	largest = l
+</span></span><span class=line><span class=cl>    else largest = i
+</span></span><span class=line><span class=cl>    if r &lt;= A.heap_size and A[r] &gt; A[largest]
+</span></span><span class=line><span class=cl>    	largest = r
+</span></span><span class=line><span class=cl>    if largest == i
+</span></span><span class=line><span class=cl>    	return
+</span></span><span class=line><span class=cl>    exchange A[i] with A[largest]
+</span></span><span class=line><span class=cl>    i = largest
+</span></span></code></pre></td></tr></table></div></div><h3 id=62-6>6.2-6</h3><p>最坏情况是从根结点一直递归到叶结点，因为堆的高度为 $\lfloor \lg n \rfloor$，所以最坏情况运行时间为 $\Omega(\lg n)$。</p><h2 id=63>6.3</h2><h3 id=63-1>6.3-1</h3><p>略。</p><h3 id=63-2>6.3-2</h3><p>如果从下标 <code>1</code> 开始，子树不一定能维持最大堆性质，<code>MAX-HEAPIFY</code> 调用可能失败。</p><h3 id=63-3>6.3-3</h3><p>用数学归纳法来证明。</p><p>基本情况：证明高度 $h=0$ 时命题为真。</p><p>当 $h = 0$ 时，等价于证明最多有 $\lceil \cfrac{n}{2^{h + 1}} \rceil$ 个叶结点。由 6.1-7 知道所有叶结点下标，可算出叶结点总数为 $n\ - (\lfloor \cfrac{n}{2} \rfloor + 1) + 1 = n - \lfloor \cfrac{n}{2} \rfloor = \lceil \cfrac{n}{2} \rceil$。</p><p>归纳情况：当高度为 $h-1$ 时命题成立，证明对高度为 $h$ 时仍然成立。</p><p>设树 $T$ 在高度为 $h$ 的结点个数 $n_h$，叶结点个数 $n_0$。$T$ 删除所有叶结点得到的子树 $T&rsquo;$。</p><p>$T&rsquo;$ 的所有结点个数 $n&rsquo; = n - n_0$。从基本情况有 $n_0 = \lceil \cfrac{n}{2} \rceil$，因此 $n&rsquo; = n - \lceil \cfrac{n}{2} \rceil = \lfloor \cfrac{n}{2} \rfloor$。</p><p>$T$ 中高度为 $h$ 的结点在 $T&rsquo;$ 中高度为 $h-1$，设其数量为 $n&rsquo;<em>{h - 1}$。则 $n_h = n&rsquo;</em>{h - 1}$。</p><p>因为对 $n&rsquo;<em>{h - 1}$ 命题 $n&rsquo;</em>{h - 1} \leqslant \lceil \cfrac{n&rsquo;}{2^h} \rceil$ 成立，所以：</p><div>$$
+\begin{aligned}
+n_h
+& = n'_{h - 1} \\
+& \leqslant \left \lceil \frac{n'}{2^h} \right \rceil \\
+& = \left \lceil \frac{\lfloor \frac{n}{2} \rfloor}{2^h} \right \rceil \\
+& \leqslant \left \lceil \frac{\frac{n}{2}}{2^h} \right \rceil \\
+& = \left \lceil \frac{n}{2^{h + 1}} \right \rceil
+\end{aligned}
+$$</div>所以命题对 $h$ 也成立，故原命题成立。<h2 id=64>6.4</h2><h3 id=64-1>6.4-1</h3><p>略。</p><h3 id=64-2>6.4-2</h3><p>初始化：子数组 $A[i+1..n]$ 为空，因此不变式正确。</p><p>保持：$A[1]$ 在 $A[1..i]$ 中最大，并且小于 $A[i+1..n]$ 中的元素。当把 $A[1]$ 放到第 $i$ 个位置，则 $A[i..n]$ 已经是排好序的。递减 <code>heap_size</code> 并调用 <code>MAX-HEAPIFY</code> 会将 $A[1..i-1]$ 变成最大堆。递减 $i$ 的值为下次迭代建立不变式。</p><p>终止：在循环结束时，$i = 1$。此时 $A[2..n]$ 是排好序的并且 $A[1]$ 是数组中最小的元素，这让整个数组 $A[1..n]$ 也是排好序的。</p><h3 id=64-3>6.4-3</h3><p>两种情况都是 $\Theta(n \lg n)$。</p><p>如果数组以升序排序，将数组转化成堆需要 $O(n)$ 时间。然后需要 $ n- 1$ 次调用过程 <code>MAX-HEAPIFY</code>，每次都执行 $\lg k$ 次操作。因此
+$$
+\sum_{k = 1}^{n - 1} \lg k = \lg((n - 1)!) = \Theta(n \lg n)
+$$
+降序同理。<code>BUILD-MAX-HEAP</code> 更快（常数因子），但整个计算时间由循环中的 <code>HEAPSORT</code> 主导，因此：
+$$
+\sum^n_{i = 1} \lg i = \lg n! = \Theta(n \lg n)
+$$</p><h3 id=64-4>6.4-4</h3><p>当数组已经排好序时，需要线性时间将它转化成最大堆，然后需要 $n \lg n$ 时间来排序。</p><h3 id=64-5-star>6.4-5 $\star$</h3><p>参考：https://stackoverflow.com/questions/4589988/lower-bound-on-heapsort。</p><blockquote><p>The formal lower-bound proof is due to Schaffer and Sedgewick&rsquo;s"The Analysis of Heapsort"paper. Here&rsquo;s a slightly paraphrased version of the proof that omits some of the technical details.</p><p>To begin, let&rsquo;s suppose that $n = 2^k - 1$ for some $k$, which guarantees that we have a complete binary heap. I&rsquo;ll show how to handle this case separately later on. Because we have $2^k - 1$ elements, the first pass of heapsort will, in $\Theta(n)$, build up a heap of height $k$. Now, consider the first half of the dequeues from this heap, which removes $2^{k-1}$ nodes from the heap. The first key observation is that if you take the starting heap and then mark all of the nodes here that actually end up getting dequeued, they form a subtree of the heap (i.e. every node that get dequeued has a parent that also gets dequeued). You can see this because if this weren&rsquo;t the case, then there would be some node whose (larger) parent didn&rsquo;t get dequeued though the node itself was dequeued, meaning that the values are out of order.</p><p>Now, consider how the nodes of this tree are distributed across the heap. If you label the levels of the heap $0, 1, 2, \cdots, k - 1$, then there will be some number of these nodes in levels $0, 1, 2, \cdots, k - 2$ (that is, everything except the bottom level of the tree). In order for these nodes to get dequeued from the heap, then they have to get swapped up to the root, and they only get swapped up one level at a time. This means that one way to lower-bound the runtime of heapsort would be to count the number of swaps necessary to bring all of these values up to the root. In fact, that&rsquo;s exactly what we&rsquo;re going to do.</p><p>The first question we need to answer is - how many of the largest $2^{k - 1}$ nodes are not in the bottom level of the heap? We can show that this is no greater than $2^{k - 2}$ by contradiction. Suppose that there are at least $2^{k - 2} + 1$ of the largest nodes in the bottom level of the heap. Then each of the parents of those nodes must also be large nodes in level $k - 2$. Even in the best case, this means that there must be at least $2^{k - 3} + 1$ large nodes in level $k - 2$, which then means that there would be at least $2^{k - 4} + 1$ large nodes in level $k - 3$, etc. Summing up over all of these nodes, we get that there are $2^{k - 2} + 2^{k - 3} + 2^{k - 4} + \cdots + 2^0 + k$ large nodes. But this value is strictly greater than $2^{k - 1}$, contradicting the fact that we&rsquo;re working with only $2^{k - 1}$ nodes here.</p><p>Okay&mldr; we now know that there are at most $2^{k - 2}$ large nodes in the bottom layer. This means that there must be at least $2^{k - 2}$ of the large nodes in the first $k - 2$ layers. We now ask - what is the sum, over all of these nodes, of the distance from that node to the root? Well, if we have $2^{k - 2}$ nodes positioned somewhere in a complete heap, then at most $2^{k - 3}$ of them can be in the first $k - 3$ levels, and so there are at least $2^{k - 2} - 2^{k - 3} = 2^{k - 3}$ heavy nodes in level $k - 2$. Consequently, the total number of swaps that need to be performed are at least $(k - 2) 2^{k-3}$. Since $n = 2^k-1$, $k = \Theta(\lg n)$, and so this value is $\Theta(n \lg n)$ as required.</p></blockquote><h2 id=65>6.5</h2><h3 id=65-1>6.5-1</h3><p>略。</p><h3 id=65-2>6.5-2</h3><p>略。</p><h3 id=65-3>6.5-3</h3><p><code>HEAP-MINIMUM(A)</code>：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>return A[1]
+</span></span></code></pre></td></tr></table></div></div><p><code>HEAP-EXTRACT-MIN(A)</code>：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>if A.heap_size &lt; 1
+</span></span><span class=line><span class=cl>	error &#34;heap underflow&#34;
+</span></span><span class=line><span class=cl>min = A[1]
+</span></span><span class=line><span class=cl>A[1] = A[A.heap_size]
+</span></span><span class=line><span class=cl>A.heap_size = A.heap_size - 1
+</span></span><span class=line><span class=cl>MIN-HEAPIFY(A, 1)
+</span></span><span class=line><span class=cl>return min
+</span></span></code></pre></td></tr></table></div></div><p><code>HEAP-DECREASE-KEY(A, i, key)</code>：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>if key &gt; A[i]
+</span></span><span class=line><span class=cl>	error &#34;new key is larger than current key&#34;
+</span></span><span class=line><span class=cl>A[i] = key
+</span></span><span class=line><span class=cl>while i &gt; 1 and A[PARENT(i)] &gt; A[i]
+</span></span><span class=line><span class=cl>	exchange A[i] with A[PARENT]
+</span></span><span class=line><span class=cl>	i = PARENT(i)
+</span></span></code></pre></td></tr></table></div></div><p><code>MIN-HEAP-INSER(A, key)</code>：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>A.heap_size = A.heap_size + 1
+</span></span><span class=line><span class=cl>A[A.heap_size] = Infinity
+</span></span><span class=line><span class=cl>HEAP-DECRASE-KEY(A, A.heap_size, key)
+</span></span></code></pre></td></tr></table></div></div><h3 id=65-4>6.5-4</h3><p>为了维持 <code>HEAP-INCREASE-KEY</code> 过程的 <code>if</code> 语句的条件为真。</p><h3 id=65-5>6.5-5</h3><p>初始化：<code>A[1..heap-size]</code> 满足最大堆性质，除非 $A[i]$ 大于 $A[PARENT(i)]$，因为 $A[i]$ 被修改了。$A[i]$ 大于它的子结点，否则 <code>if</code> 语句会失败，不会进入 <code>while</code> 循环。</p><p>保持：在循环中交换 $A[i]$ 和 $A[PARENT(i)]$，满足了最大堆性质。然后在循环下次迭代继续和父结点的父结点比较，继续进行交换，以继续维持最大堆性质。</p><p>终止：当堆中元素遍历完，或 $A[i]$ 小于父结点时（维持了最大堆性质），结束循环。此时，$A$ 是最大堆。</p><h3 id=65-6>6.5-6</h3><p><code>HEAP-INCREASE-KEY(A, i, key)</code>：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>if key &lt; A[i]
+</span></span><span class=line><span class=cl>	error &#34;new key is smaller than current key&#34;
+</span></span><span class=line><span class=cl>while i &gt; 1 and A[PARENT(I)] &lt; key
+</span></span><span class=line><span class=cl>	A[i] = A[PARENT(i)]
+</span></span><span class=line><span class=cl>	i = PARENT(i)
+</span></span><span class=line><span class=cl>A[i] = key
+</span></span></code></pre></td></tr></table></div></div><h3 id=65-7>6.5-7</h3><p>对于队列，优先级队列每次插入新元素时递减所添加元素的优先级。</p><p>对于栈，优先级队列则以递增优先级的方式添加元素。</p><h3 id=65-8>6.5-8</h3><p><code>HEAP-DELETE(A, i)</code>：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>if A[i] &gt; A[A.heap-size]
+</span></span><span class=line><span class=cl>	A[i] = A[A.heap-size]
+</span></span><span class=line><span class=cl>	MAX-HEAPIFY(A, i)
+</span></span><span class=line><span class=cl>else HEAP-INCREASE-KEY(A, i, A[A.heap-size])
+</span></span><span class=line><span class=cl>A.heap-size = A.heap-size - 1
+</span></span></code></pre></td></tr></table></div></div><h3 id=65-9>6.5-9</h3><p>从 $k$ 个有序链表中分别从头取一个元素，然后放到一个最小堆实现的最小优先级队列中。</p><p>合并时，从最小堆中取出最小的元素，插入该元素对应链表中的下一个元素到最小堆中。如果链表为空，则从最小堆中取出倒数第二小的元素，以此类推。持续这个过程，直到最小堆为空，表示已经完成合并。</p><p>算法总共需要 $n$ 步将 $n$ 个元素插入到最小优先级队列中，并且每次插入需要 $\lg k$ 时间，因此算法的时间复杂度是 $O(n \lg k)$。</p><h2 id=思考题>思考题</h2><h3 id=6-1>6-1</h3><p>a. 不是相同的。最大堆对于结点的左右子结点的顺序没有要求。对于数组 <code>[1, 2, 3, 4, 5]</code>，自底向上地遍历数组元素构建最大堆得到 <code>[5, 4, 3, 1, 2]</code>，而自顶向下地插入数组元素构建最大堆得到 <code>[5, 4, 2, 1 ,3]</code>。</p><p>b. 每次插入最多需要 $O(\lg n)$ 时间，总共有 $n - 1$ 个元素要插入，时间复杂度为 $(n - 1) \cdot O(\lg n) = O(n \lg n)$。因此插入法在效率方面不如自底向上的 Floyd 建堆算法。</p><h3 id=6-2>6-2</h3><p>a. 效仿二叉堆，给定 $d$ 叉堆中一个结点的下标 $i$，计算出它的父结点和子结点的下标。堆的第一个结点下标是 $1$，它的子结点下标是 $1 + 1,1 + 2,\cdots,1 + d = 2,3,\cdots,1 + d$。第二个结点的第一个子结点下标是 $(1 + d) + 1$，第二个是 $(1 + d) + 2$，$\cdots$，第 $d$ 个是 $(1 + d) + d$。第三个结点的第一个子结点下标是 $(1 + 2d) + 1$，第二个是 $(1 + 2d) + 2$，$\cdots$，第 $d$ 个是 $(1 + 2d) + d$。以此类推，可以归纳出下标为 $i$ 的结点的第 $j$ 个子结点下标是 $1 + (i - 1)d +j$。反过来可以推出父结点下标是 $\cfrac{i - 1 - j}{d} + 1$，此时可以设 $j = 1$，则父结点下标为 $\lfloor \cfrac{i - 2}{d} + 1 \rfloor$。</p><p><code>D-ARY-PARENT(i)</code>：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>return floor((i - 2) / d + 1)
+</span></span></code></pre></td></tr></table></div></div><p><code>D-ARY-CHILD(i, j)</code>：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>return (i - 1)d + j + 1
+</span></span></code></pre></td></tr></table></div></div><p>b. 高度是 $\Theta(\log_d n)$。</p><p>c. <code>D-ARY-EXTRACT-MAX(A)</code>：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>if A.heap_size &lt; 1
+</span></span><span class=line><span class=cl>    error &#34;heap underflow&#34;
+</span></span><span class=line><span class=cl>max = A[1]
+</span></span><span class=line><span class=cl>A[1] = A[A.heap_size]
+</span></span><span class=line><span class=cl>A.heap_size = A.heap_size - 1
+</span></span><span class=line><span class=cl>D-ARY-MAX-HEAPIFY(A, 1)
+</span></span><span class=line><span class=cl>return max
+</span></span></code></pre></td></tr></table></div></div><p><code>D-ARY-MAX-HEAPIFY(A, i)</code>：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>largest = i
+</span></span><span class=line><span class=cl>for j = 1 to d
+</span></span><span class=line><span class=cl>    if D-ARY-CHILD(j, i) &lt;= A.heap_size and A[D-ARY-CHILD(j, i)] &gt; A[i]
+</span></span><span class=line><span class=cl>        if A[D-ARY-CHILD(j, i)] &gt; largest
+</span></span><span class=line><span class=cl>            largest = A[D-ARY-CHILD(j, i)]
+</span></span><span class=line><span class=cl>if largest != i
+</span></span><span class=line><span class=cl>    exchange A[i] with A[largest]
+</span></span><span class=line><span class=cl>    D-ARY-MAX-HEAPIFY(A, largest)
+</span></span></code></pre></td></tr></table></div></div><p><code>D-ARY-MAX-HEAPIFY</code> 的时间复杂度和结点的高度有关，等于 $O(d \log_{d}n)$。<code>D-ARY-EXTRACT-MAX</code> 除了调用 <code>D-ARY-MAX-HEAPIFY</code> 以外的操作都是常数项的，因此时间复杂度是 $O(d \log_{d}n)$。</p><p>d. <code>D-ARY-HEAP-INSERT(A, key)</code>：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>A.heap_size = A.heap_size + 1
+</span></span><span class=line><span class=cl>A[A.heap_size] = key
+</span></span><span class=line><span class=cl>i = A.heap_size
+</span></span><span class=line><span class=cl>whild i &gt; 1 and A[D-ARY-PARENT] &lt; A[i]
+</span></span><span class=line><span class=cl>    exchange A[i] with A[D-ARY-PARENT]
+</span></span><span class=line><span class=cl>    i = D-ARY-PARENT(i)
+</span></span></code></pre></td></tr></table></div></div><p>时间复杂度是 $O(\log_{d}n)$，因为 <code>while</code> 循环运行次数最多和堆高相同。</p><p>e. <code>D-ARY-HEAP-INCREASE-KEY(A, i, key)</code>：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>if key &lt; A[i]
+</span></span><span class=line><span class=cl>    error &#34;new key is smaller than current key&#34;
+</span></span><span class=line><span class=cl>A[i] = key
+</span></span><span class=line><span class=cl>while i &gt; 1 and A[D-ARY-PARENT] &lt; A[i]
+</span></span><span class=line><span class=cl>    exchange A[i] with A[D-ARY-PARENT]
+</span></span><span class=line><span class=cl>    i = D-ARY-PARENT(i)
+</span></span></code></pre></td></tr></table></div></div><p>时间复杂度是 $O(\log_{d}n)$，因为 <code>while</code> 循环运行次数最多和堆高相同。</p><h3 id=6-3>6-3</h3><p>TODO</p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-tag><span><a href=/tags/clrs/>CLRS</a></span></div><div class=post-info-line><div class=post-info-mod><span>更新于 2021-12-27&nbsp;<a class=git-hash href=https://github.com/lumicia/lumicia/github.io/commit/e973405f4f0c013dc96c7da049cd0258ec7331ff target=_blank title="committed&nbsp;by&nbsp;lumicia(arxzs1057@gmail.com)&nbsp;e973405:&nbsp;Add  CLRS chap6 notes and exercises">
+<i class="fas fa-hashtag fa-fw"></i>e973405</a></span></div><div class=post-info-mod><span><a class=link-to-markdown href=/clrs-chap6-exercises/index.md target=_blank>阅读原始文档</a></span></div></div><div class=post-info-share><span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://lumicia.github.io/clrs-chap6-exercises/ data-title="算法导论 Chap6 习题" data-via=xxxx data-hashtags=CLRS><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://lumicia.github.io/clrs-chap6-exercises/ data-hashtag=CLRS><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 Hacker News" data-sharer=hackernews data-url=https://lumicia.github.io/clrs-chap6-exercises/ data-title="算法导论 Chap6 习题"><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://lumicia.github.io/clrs-chap6-exercises/ data-title="算法导论 Chap6 习题"><i class="fab fa-line fa-fw"></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://lumicia.github.io/clrs-chap6-exercises/ data-title="算法导论 Chap6 习题"><i class="fab fa-weibo fa-fw"></i></a></span></div></div><div class=post-nav><a href=/clrs-chap8/ class=prev rel=prev title="算法导论 Chap8：线性时间排序"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a></div></div></div><div id=comments class=single-card></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.105.0">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/khusika/FeelIt target=_blank rel="noopener noreffer" title="FeelIt 1.0.1"><i class="fas fa-hand-holding-heart fa-fw"></i> FeelIt</a></div><div class=footer-line itemscope itemtype=http://schema.org/CreativeWork><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://github.com/lumicia>lumicia</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div><script>"serviceWorker"in navigator&&(navigator.serviceWorker.register("/sw.min.js?version=1.0.1",{scope:"/"}).then(()=>{console.info("lumicia\u00A0Service Worker Registered")},e=>console.error("lumicia\u00A0Service Worker registration failed: ",e)),navigator.serviceWorker.ready.then(()=>{console.info("lumicia\u00A0Service Worker Ready")}))</script></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部><i class="fas fa-chevron-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment-alt fa-fw"></i></a></div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/copy-tex.min.css><script src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.0/dist/autocomplete.min.js></script><script src=https://cdn.jsdelivr.net/npm/algoliasearch@4.10.3/dist/algoliasearch-lite.umd.min.js></script><script src=https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js></script><script src=https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js></script><script src=https://cdn.jsdelivr.net/npm/sharer.js@0.4.1/sharer.min.js></script><script src=https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js></script><script src=https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js></script><script src=https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/copy-tex.min.js></script><script src=https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/mhchem.min.js></script><script>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:30},comment:{},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{algoliaAppID:"UAL0NNJWXE",algoliaIndex:"index.zh-cn",algoliaSearchKey:"7b7fbdfb7ee82ee61901f2c6b09b05be",highlightTag:"em",maxResultLength:10,noResultsFound:"没有找到结果",snippetLength:50,type:"algolia"}}</script><script src=/js/theme.min.js></script></body></html>

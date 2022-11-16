@@ -1,0 +1,234 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>算法导论 Chap3 习题 - lumicia</title><meta name=description content="lumicia"><meta property="og:title" content="算法导论 Chap3 习题"><meta property="og:description" content="3.1 3.1-1 因为 $f(n)$ 和 $g(n)$ 都是渐近非负的，所以对于 $f(n)$ 和 $g(n)$ 有： $$ \begin{aligned} \exists n_1:\quad f(n) & \geqslant 0\quad \text{for all}\ n > n_1 \\ \exists n_2:\quad g(n) & \geqslant 0\quad \text{for all}\ n > n_2 \end{aligned} $$ 令 $n_0 = \max(n_1, n_2)$，则对于 $n > n_0$"><meta property="og:type" content="article"><meta property="og:url" content="https://lumicia.github.io/clrs-chap3-exercises/"><meta property="og:image" content="https://lumicia.github.io/logo.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-04-07T09:33:29+08:00"><meta property="article:modified_time" content="2021-12-07T13:01:40+08:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://lumicia.github.io/logo.png"><meta name=twitter:title content="算法导论 Chap3 习题"><meta name=twitter:description content="3.1 3.1-1 因为 $f(n)$ 和 $g(n)$ 都是渐近非负的，所以对于 $f(n)$ 和 $g(n)$ 有： $$ \begin{aligned} \exists n_1:\quad f(n) & \geqslant 0\quad \text{for all}\ n > n_1 \\ \exists n_2:\quad g(n) & \geqslant 0\quad \text{for all}\ n > n_2 \end{aligned} $$ 令 $n_0 = \max(n_1, n_2)$，则对于 $n > n_0$"><meta name=application-name content="lumicia"><meta name=apple-mobile-web-app-title content="lumicia"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://lumicia.github.io/clrs-chap3-exercises/><link rel=prev href=https://lumicia.github.io/clrs-chap3/><link rel=next href=https://lumicia.github.io/clrs-chap4/><link rel=stylesheet href=/css/page.min.css><link rel=stylesheet href=/css/home.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"算法导论 Chap3 习题","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/lumicia.github.io\/clrs-chap3-exercises\/"},"image":[{"@type":"ImageObject","url":"https:\/\/lumicia.github.io\/images\/avatar.webp","width":512,"height":512}],"genre":"posts","keywords":"CLRS","wordcount":3012,"url":"https:\/\/lumicia.github.io\/clrs-chap3-exercises\/","datePublished":"2021-04-07T09:33:29+08:00","dateModified":"2021-12-07T13:01:40+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"lumicia","logo":{"@type":"ImageObject","url":"https:\/\/lumicia.github.io\/images\/avatar.webp","width":512,"height":512}},"author":{"@type":"Person","name":"lumicia"},"description":""}</script></head><body data-header-desktop=fixed data-header-mobile=auto><script>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=lumicia>lumicia</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/><i class='fa fa-archive'></i> 归档 </a><a class=menu-item href=/tags/><i class='fa fa-tags'></i> 标签 </a><a class=menu-item href=/categories/><i class='fa fa-folder-open'></i> 分类 </a><a class=menu-item href=/categories/documentation/><i class='fa fa-book'></i> 文档 </a><a class=menu-item href=/about/><i class='fa fa-user'></i> 关于 </a><a class=menu-item href=https://github.com/lumicia title=GitHub rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw'></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
+<a href=# class="search-button search-toggle" id=search-toggle-desktop title=搜索><i class="fas fa-search fa-fw"></i></a>
+<a href=# class="search-button search-clear" id=search-clear-desktop title=清空><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a class=menu-item href=/index.xml title=RSS><i class="fas fa-rss fa-fw" title=RSS></i> </a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=lumicia>lumicia</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
+<a href=# class="search-button search-toggle" id=search-toggle-mobile title=搜索><i class="fas fa-search fa-fw"></i></a>
+<a href=# class="search-button search-clear" id=search-clear-mobile title=清空><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=# class=search-cancel id=search-cancel-mobile>取消</a></div><a class=menu-item href=/posts/ title><i class='fa fa-archive'></i>归档</a><a class=menu-item href=/tags/ title><i class='fa fa-tags'></i>标签</a><a class=menu-item href=/categories/ title><i class='fa fa-folder-open'></i>分类</a><a class=menu-item href=/categories/documentation/ title><i class='fa fa-book'></i>文档</a><a class=menu-item href=/about/ title><i class='fa fa-user'></i>关于</a><a class=menu-item href=https://github.com/lumicia title=GitHub rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw'></i></a><div class=menu-item><a href=/index.xml title=RSS><i class="fas fa-rss fa-fw" title=RSS></i></a>
+<span>&nbsp;|&nbsp;</span><a href=javascript:void(0); class=theme-switch title=切换主题>
+<i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single" data-toc=enable><div class=single-card><h2 class="single-title animated flipInX">算法导论 Chap3 习题</h2><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://github.com/lumicia title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>lumicia</a></span>&nbsp;<span class=post-category>出版于 <a href=/categories/algorithm/><i class="far fa-folder fa-fw"></i>Algorithm</a></span></div><div class=post-meta-line><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-04-07>2021-04-07</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3012 字</span>&nbsp;
+<span><i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟</span>&nbsp;</div></div><hr><div class="details toc" id=toc-static data-kept><div class="details-summary toc-title"><span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#31>3.1</a><ul><li><a href=#31-1>3.1-1</a></li><li><a href=#31-2>3.1-2</a></li><li><a href=#31-3>3.1-3</a></li><li><a href=#31-4>3.1-4</a></li><li><a href=#31-5>3.1-5</a></li><li><a href=#31-6>3.1-6</a></li><li><a href=#31-7>3.1-7</a></li><li><a href=#31-8>3.1-8</a></li></ul></li><li><a href=#32>3.2</a><ul><li><a href=#32-1>3.2-1</a></li><li><a href=#32-2>3.2-2</a></li><li><a href=#32-3>3.2-3</a></li><li><a href=#32-4-star>3.2-4 $\star$</a></li><li><a href=#32-5-star>3.2-5 $\star$</a></li><li><a href=#32-6>3.2-6</a></li><li><a href=#32-7>3.2-7</a></li><li><a href=#32-8>3.2-8</a></li></ul></li><li><a href=#思考题>思考题</a><ul><li><a href=#3-1>3-1</a></li><li><a href=#3-2>3-2</a></li><li><a href=#3-3>3-3</a></li><li><a href=#3-4>3-4</a></li><li><a href=#3-5>3-5</a></li><li><a href=#3-6>3-6</a></li></ul></li></ul></nav></div></div><div class=content id=content><h2 id=31>3.1</h2><h3 id=31-1>3.1-1</h3><p>因为 $f(n)$ 和 $g(n)$ 都是渐近非负的，所以对于 $f(n)$ 和 $g(n)$ 有：</p><div>$$
+\begin{aligned}
+\exists n_1:\quad f(n) & \geqslant 0\quad \text{for all}\ n > n_1 \\
+\exists n_2:\quad g(n) & \geqslant 0\quad \text{for all}\ n > n_2
+\end{aligned}
+$$</div><p>令 $n_0 = \max(n_1, n_2)$，则对于 $n > n_0$，下列不等式成立：</p><div>$$
+\begin{aligned}
+f(n) & \leqslant \max(f(n), g(n)) \\
+g(n) & \leqslant \max(f(n), g(n)) \\ 
+\frac{1}{2}(f(n) + g(n)) & \leqslant \max(f(n), g(n)) \\
+\max(f(n), g(n)) & \leqslant (f(n) + g(n))
+\end{aligned}
+$$</div>结合后两个不等式得：
+$$
+0 \leqslant \frac{1}{2}(f(n) + g(n)) \leqslant \max{(f(n), g(n))} \leqslant f(n) + g(n).
+$$
+即当 $c_1 = \frac{1}{2}$ 和 $c_2 = 1$ 时，$\Theta{(f(n) + g(n))}$ 的定义。<h3 id=31-2>3.1-2</h3><p>将 $(n + a)^b$ 以二项式展开，得：</p><p>$$
+(n + a)^b = C_0^b n^b a^0 + C_1^b n^{b - 1} a^1 + \cdots + C_b^b n^0 a^b.
+$$
+对二项式成立的一个不等式是对于 $x \geqslant 1$，有：</p><p>$$
+a_0 x^0 + a_1 x^1 + \cdots + a_n x^n \leqslant (a_0 + a_1 + \cdots + a_n) x^n.
+$$
+因此可得：</p><div>$$
+\begin{aligned}
+C_0^b n^b
+& \leqslant C_0^b n^b a^0 + C_1^b n^{b - 1} a^1 + \cdots + C_b^b n^0 a^b \\
+& \leqslant (C_0^b + C_1^b + \cdots + C_b^b) n^b = 2^b n^b.
+\end{aligned}
+$$</div><p>从而 $(n + a)^b = \Theta(n^b).$</p><h3 id=31-3>3.1-3</h3><p>这个句子对于算法 $A$ 的上下界都没有准确描述。</p><h3 id=31-4>3.1-4</h3><p>（1）$2^{n + 1} = 2 \times 2^n$。令 $c \geqslant 2, n_0 = 0$，使得对所有 $n \geqslant n_0$ 有 $0 \leqslant 2^{n + 1} \leqslant c \times 2^n$。根据定义，$2^{n + 1} = O(2^n)$，因此为真。</p><p>（2）$2^{2n} = 2^n \times 2^n = 4^n$。无法找到任何 $c$ 和 $n_0$ 使得 $0 \leqslant 2^{2^n} = 4^n \leqslant c \times 2^n$ 对所有 $n \geqslant n_0$ 成立。</p><h3 id=31-5>3.1-5</h3><p>充分性：因为 $f(n) = \Theta(g(n))$，有 $0 \leqslant c_{1}g(n) \leqslant f(n) \leqslant c_{2}g(n)$ 对所有 $n \geqslant n_0$ 都成立。</p><p>由 $0 \leqslant c_{1}g(n) \leqslant f(n)$ 可得 $f(n) = O(g(n))$；由 $0 \leqslant f(n) \leqslant c_{2}g(n)$ 可得 $f(n) = \Omega(g(n))$。</p><p>必要性：因为 $f(n) = O(g(n))$ 且 $f(n) = \Omega(g(n))$，有：</p><div>$$
+\begin{aligned}
+0 \leqslant c_{1}'g(n) \leqslant f(n)\ 对所有\ n \geqslant n_1\ 成立 \\
+0 \leqslant f(n) \leqslant c_{2}'g(n)\ 对所有\ n \geqslant n_2\ 成立
+\end{aligned}
+$$</div><p>令 $n_0&rsquo; = \max(n_1,n_2)$，合并不等式得：</p><div>$$
+0 \leqslant c_{1}'g(n) \leqslant f(n) \leqslant c_{2}'g(n)\ 对所有\ n \geqslant n_0'\ 成立.
+$$</div><h3 id=31-6>3.1-6</h3><p>证明同 3.1-5。</p><h3 id=31-7>3.1-7</h3><p>根据定义有 $0 \leqslant o(g(n)) &lt; ch(n)$，$0 \leqslant ch(n) &lt; \omega(g(n))$。因此 $o(g(n)) &lt; \omega(g(n))$，故 $o(g(n)) \cap \omega(g(n)) = \emptyset$。</p><h3 id=31-8>3.1-8</h3><div>$$
+\begin{aligned}
+\Omega(g(n,m)) = \{f(n,m):
+& 存在正常量\ c,n_0\ 和\ m_0 \\
+& 使得\ 0 \leqslant cg(n,m) \leqslant f(n,m) \\
+& 对所有\ n \geqslant n_0\ 或\ m \geqslant m_0\ 成立\} \\
+\end{aligned}
+$$</div><div>$$
+\begin{aligned}
+\Theta(g(n,m)) = \{f(n,m):
+& 存在正常量\ c_1,c_2,n_0\ 和\ m_0 \\
+& 使得\ 0 \leqslant c_1g(n,m) \leqslant f(n,m) \leqslant c_2g(n,m) \\
+& 对所有\ n \geqslant n_0\ 或\ m \geqslant m_0\ 成立\}
+\end{aligned}
+$$</div><h2 id=32>3.2</h2><h3 id=32-1>3.2-1</h3><p>（1）因为 $f(n)$ 和 $g(n)$ 都是单调递增函数，所以当 $n_1 \leqslant n_2$ 时，有 $f(n_1) \leqslant f(n_2)$ 和 $g(n_1) \leqslant g(n_2)$。另外令 $g(n_1) = m_1$， $g(n_2) = m_2$， 有 $m_1 \leqslant m_2$。综上可得：
+$$
+f(n_1) + g(n_1) \leqslant f(n_2) + g(n_1) \leqslant f(n_2) + g(n_2) \
+f(m_1) \leqslant f(m_2)
+$$</p><p>故 $f(n) + g(n)$ 和 $f(g(n))$ 都是单调递增的。</p><p>（2）因为 $f(n)$ 和 $g(n)$ 都是非负的，所以有：
+$$
+f(n_1) \cdot g(n_1) \leqslant f(n_2) \cdot g(n_1) \leqslant f(n_2) \cdot g(n_2)
+$$</p><h3 id=32-2>3.2-2</h3><div>$$
+\begin{aligned}
+a^{\log_{b}{c}}
+& = (c^{\log_{c}{a}})^{\log_{b}{c}} \\
+& = c^{\log_{c}{a} \cdot {\log_{b}{c}}} \\
+& = c^{\frac{\log_{c}{a}}{\log_{c}{b}}} \\
+& = c^{\log_{b}{a}}
+\end{aligned}
+$$</div><h3 id=32-3>3.2-3</h3><p>（1）证明 $\lg(n!) = \Theta(n \lg n)$：</p><div>$$
+\begin{aligned} \lg(n!) & = \lg\left(\sqrt{2\pi n}\left(\frac{n}{e}\right)^n\left(1 + \Theta\left(\frac{1}{n}\right)\right)\right) \\
+& = \lg\sqrt{2\pi n } + \lg\Big(\frac{n}{e}\Big)^n + \lg\left(1+\Theta\left(\frac{1}{n}\right)\right) \\
+& = \Theta(\sqrt n) + n\lg{\frac{n}{e}} + \lg\left(\Theta(1) + \Theta\left(\frac{1}{n}\right)\right) \\
+& = \Theta(\sqrt n) + \Theta(n\lg n) + \Theta\left(\frac{1}{n}\right) \\
+& = \Theta(n\lg n)
+\end{aligned}
+$$</div><p>（2）证明 $n! = \omega(2^n)$：</p><div>$$
+\begin{aligned}
+\lim_{n \to \infty} \frac{2^n}{n!}
+& = \lim_{n \to \infty} \frac{2^n}{\sqrt{2 \pi n} \left(\frac{n}{e}\right)^n \left(1 + \Theta\left(\frac{1}{n}\right)\right)} \\
+& = \lim_{n \to \infty} \frac{1}{\sqrt{2 \pi n} \left(1 + \Theta\left(\frac{1}{n}\right)\right)} \left(\frac{2e}{n}\right)^n \\
+& \leqslant \lim_{n \to \infty} \left(\frac{2e}{n}\right)^n \\
+& \leqslant \lim_{n \to \infty} \frac{1}{2^n} = 0 & \text{for $n > 4e$}
+\end{aligned}
+$$</div>证明 $n! = o(n^n)$：<div>$$
+\begin{aligned}
+\lim_{n \to \infty} \frac{n^n}{n!}
+& = \lim_{n \to \infty} \frac{n^n}{\sqrt{2 \pi n} \left(\frac{n}{e}\right)^n \left(1 + \Theta\left(\frac{1}{n}\right)\right)} \\
+& = \lim_{n \to \infty} \frac{e^n}{\sqrt{2 \pi n} \left(1 + \Theta\left(\frac{1}{n}\right)\right)} \\
+& = \lim_{n \to \infty} O\left(\frac{1}{\sqrt n}\right)e^n \\
+& \geqslant \lim_{n \to \infty} \frac{e^n}{c\sqrt n} & \text{(for some constant $c > 0$)} \\
+& \geqslant \lim_{n \to \infty} \frac{e^n}{cn} \\
+& = \lim_{n \to \infty} \frac{e^n}{c} = \infty
+\end{aligned}
+$$</div><h3 id=32-4-star>3.2-4 $\star$</h3><p>（1）如果 $f(n)$ 是多项式有界的，则存在常量 $c$，$k$，$n_0$ 使得对所有 $n \geqslant n_0$，有 $f(n) \leqslant cn^k$。因此 $\lg(f(n)) \leqslant kc \lg n$，即 $\lg(f(n)) = O(\lg n)$。所以如果 $\lg(f(n)) = O(\lg n)$，那么 $f(n)$ 就是多项式有界的。</p><p>因为 $\lg(n!) = \Theta(n \lg n)$，$\lceil \lg n \rceil = \Theta(\lg n)$，得：</p><div>$$
+\begin{aligned}
+\lg(\lceil \lg n \rceil!)
+& = \Theta(\lceil \lg n \rceil \lg \lceil \lg n \rceil) \\
+& = \Theta(\lg n \lg\lg n) \\
+& = \omega(\lg n) \\
+& \ne O(\lg n)
+\end{aligned}
+$$</div>所以 $\lceil \lg n \rceil!$ 不是多项式有界的。<p>（2）同样按照（1）中的分析，可得：</p><div>$$
+\begin{aligned}
+\lg(\lceil \lg\lg n \rceil!)
+& = \Theta(\lceil \lg\lg n \rceil \lg \lceil \lg\lg n \rceil) \\
+& = \Theta(\lg\lg n\lg\lg\lg n) \\
+& = o((\lg\lg n)^2) \\ & = o(\lg^2(\lg n)) \\ & = o(\lg n) \\
+& = O(\lg n)
+\end{aligned}
+$$</div><h3 id=32-5-star>3.2-5 $\star$</h3><div>$$
+\begin{aligned}
+\lim_{n \to \infty} \frac{\lg(\lg^*n)}{\lg^*(\lg n)}
+& = \lim_{n \to \infty} \frac{\lg(\lg^* 2^n)}{\lg^*(\lg 2^n)} \\
+& = \lim_{n \to \infty} \frac{\lg(1 + \lg^* n)}{\lg^* n} \\
+& = \lim_{n \to \infty} \frac{\lg(1 + n)}{n} \\ & = \lim_{n \to \infty} \frac{1}{1 + n} \\
+& = 0
+\end{aligned}
+$$</div><p>所以 $\lg^{*}(\lg n)$ 更大。</p><h3 id=32-6>3.2-6</h3><div>$$
+\begin{aligned}
+\phi^2 & = \left(\frac{1 + \sqrt 5}{2}\right)^2 = \frac{6 + 2\sqrt 5}{4} = 1 + \frac{1 + \sqrt 5}{2} = 1 + \phi \\
+\hat\phi^2 & = \left(\frac{1 - \sqrt 5}{2}\right)^2 = \frac{6 - 2\sqrt 5}{4} = 1 + \frac{1 - \sqrt 5}{2} = 1 + \hat\phi
+\end{aligned}
+$$</div><h3 id=32-7>3.2-7</h3><p>基本情况：对于 $i = 0$，有：
+$$
+\frac{\phi^0 - \hat\phi^0}{\sqrt 5} = \frac{1 - 1}{\sqrt 5} = 0 = F_0
+$$
+对于 $i = 1$，有：
+$$
+\frac{\phi^1 - \hat\phi^1}{\sqrt 5} = \frac{(1 + \sqrt 5) - (1 - \sqrt 5)}{2 \sqrt 5} = 1 = F_1
+$$
+假设 $F_{i - 1} = \cfrac{\phi^{i - 1} - \hat\phi^{i - 1}}{\sqrt 5}$ 和 $F_{i - 2} = \cfrac{\phi^{i - 2} - \hat\phi^{i - 2}}{\sqrt 5}$ 成立，则：</p><div>$$
+\begin{aligned}
+F_i & = F_{i - 1} + F_{i - 2} \\
+& = \frac{\phi^{i - 1} - \hat\phi^{i - 1}}{\sqrt 5} + \frac{\phi^{i - 2} - \hat\phi^{i - 2}}{\sqrt 5} \\
+& = \frac{\phi^{i - 2}(\phi + 1) - \hat\phi^{i - 2}(\hat\phi + 1)}{\sqrt 5} \\
+& = \frac{\phi^{i - 2}\phi^2 - \hat\phi^{i - 2}\hat\phi^2}{\sqrt 5} \\
+& = \frac{\phi^i - \hat\phi^i}{\sqrt 5}
+\end{aligned}
+$$</div><h3 id=32-8>3.2-8</h3><p>利用 $\Theta$ 记号的对称性，可得：</p><p>$$
+k \ln k = \Theta(n) \Rightarrow n = \Theta(k \ln k)
+$$</p><p>则：</p><p>$$
+\ln n = \Theta(\ln(k \ln k)) = \Theta(\ln k + \ln\ln k) = \Theta(\ln k)
+$$</p><p>从而：</p><p>$$
+\cfrac{n}{\ln n} = \cfrac{\Theta(k \ln k)}{\Theta(\ln k)} = \Theta\left({\cfrac{k \ln k}{\ln k}}\right) = \Theta(k)
+$$</p><p>再利用对称性，得：</p><p>$$
+\cfrac{n}{\ln n} = \Theta(k) \Rightarrow k = \Theta\left(\cfrac{n}{\ln n}\right)
+$$</p><h2 id=思考题>思考题</h2><h3 id=3-1>3-1</h3><p>a. 需要选择 $c$ 使得：</p><p>$$
+\sum\limits_{i = 0}^d a_i n^i = a_d n^d + a_{d - 1}n^{d - 1} + \cdots + a_1n + a_0 \leqslant cn^d
+$$</p><p>不等式两边除以 $n^d$，得：
+$$
+c \geqslant a_d + \frac{a_{d - 1}}n + \frac{a_{d - 2}}{n^2} + \cdots + \frac{a_0}{n^d}
+$$
+令 $c = a_d + b$，则：</p><div>$$
+\begin{aligned}
+a_d + b & \geqslant a_d + \frac{a_{d - 1}}n + \frac{a_{d - 2}}{n^2} + \cdots + \frac{a_0}{n^d} \\
+b & \geqslant \frac{a_{d - 1}}n + \frac{a_{d - 2}}{n^2} + \cdots + \frac{a_0}{n^d}
+\end{aligned}
+$$</div>若令 $b = 1$，则可得 $n_0$ 的值：
+$$
+n_0 = \max(da_{d - 1}, d\sqrt{a_{d - 2}}, \dots, d\sqrt[d]{a_0})
+$$
+对于 $n \geqslant n_0$：
+$$
+p(n) \leqslant cn^d
+$$
+即 $O(n^d)$ 的定义。故当 $k \geqslant d$，$p(n) = O(n^k)$。<p>b. 令 a 中的 $b = -1$，同理可得 $\Omega$ 记号的定义。</p><p>c. 综合 a 和 b 可得 $\Theta$ 记号的定义。</p><p>d. 同理。</p><p>e. 同理。</p><h3 id=3-2>3-2</h3><table><thead><tr><th>$A$</th><th>$B$</th><th>$O$</th><th>$o$</th><th>$\Omega$</th><th>$\omega$</th><th>$\Theta$</th></tr></thead><tbody><tr><td>$\lg^k n$</td><td>$n^{\epsilon}$</td><td>yes</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr><tr><td>$n^k$</td><td>$c^n$</td><td>yes</td><td>yes</td><td>no</td><td>no</td><td>no</td></tr><tr><td>$\sqrt{n}$</td><td>$n^{\sin n}$</td><td>no</td><td>no</td><td>no</td><td>no</td><td>no</td></tr><tr><td>$2^n$</td><td>$2^{n / 2}$</td><td>no</td><td>no</td><td>yes</td><td>yes</td><td>no</td></tr><tr><td>$n^{\lg c}$</td><td>$c^{\lg n}$</td><td>yes</td><td>no</td><td>yes</td><td>no</td><td>yes</td></tr><tr><td>$\lg(n!)$</td><td>$\lg(n^n)$</td><td>yes</td><td>no</td><td>yes</td><td>no</td><td>yes</td></tr></tbody></table><h3 id=3-3>3-3</h3><p>a.</p><div>$$
+\begin{array}{ll} 2^{2^{n + 1}}, & \\ 2^{2^n}, & \\ (n + 1)!, & \\ n!, & \\ e^n, & \\ n\cdot 2^n, & \\ 2^n, & \\ (3 / 2)^n, & \\ (\lg n)^{\lg n} = n^{\lg\lg n}, & \\ (\lg n)!, & \\ n^3, & \\ n^2 = 4^{\lg n}, & \\ n\lg n \text{ and } \lg(n!), & \\ n = 2^{\lg n}, & \\ (\sqrt 2)^{\lg n}\quad (= \sqrt n), & \\ 2^{\sqrt{2\lg n}}, & \\ \lg^2 n, & \\ \ln n, & \\ \sqrt{\lg n}, & \\ \ln\ln n, & \\ 2^{\lg^*n}, & \\ \lg^*n \text{ and } \lg^*(\lg n), & \\ \lg(\lg^*n), & \\ n^{1 / \lg n}\quad (= 2) \text{ and } 1. & 
+\end{array}
+$$</div>b.<div>$$
+f(n) = \begin{cases} 2^{2^{n + 2}} & \text{if $n$ is even}, \\ 0 & \text{if $n$ is odd}. \end{cases}
+$$</div><h3 id=3-4>3-4</h3><p>a. 不成立。如 $n = O(n^2)$，但 $n^2 \ne O(n)$。</p><p>b. 不成立。如 $n^2 + n \ne \Theta(\min(n^2, n)) = \Theta(n)$。</p><p>c. 成立。因为对 $n \geqslant n_0$ 有 $f(n) \geqslant 1$。</p><p>$$
+\exists c, n_0: \forall n \geqslant n_0, 0 \leqslant f(n) \leqslant cg(n).
+$$</p><p>可得：</p><p>$$
+0 \leqslant \lg f(n) \leqslant \lg(cg(n)) = \lg c + \lg(g(n))
+$$</p><p>现在需要证明存在常量 $c&rsquo;$ 使得 $\lg(f(n)) \leqslant c&rsquo; \lg(g(n))$。</p><p>因为 $\lg(g(n)) \geqslant 1$，所以：
+$$
+c&rsquo; = \frac{\lg c + \lg(g(n))}{\lg(g(n))} = \frac{\lg c}{\lg(g(n))} + 1 \leqslant \lg c + 1
+$$
+常量 $c&rsquo;$ 存在，故命题成立。</p><p>d. 不成立。如 $2n = O(n)$，但 $2^{2n} = 4^n \ne O(2^n)$。</p><p>e. 成立。当 $f(n) \geqslant 1$ 时，对所有 $n \geqslant 1$ 来说 $0 \leqslant f(n) \leqslant cf^2(n)$ 是平凡的。</p><p>f. 成立。首先有 $0 \leqslant f(n) \leqslant cg(n)$，需要证明存在常量 $c&rsquo;$ 使得 $0 \leqslant c&rsquo; f(n) \leqslant g(n)$。当 $c&rsquo; = \cfrac{1}{c}$ 时明显成立。</p><p>g. 不成立。令 $f(n) = 2^n$，则需要证明下面的不等式成立：</p><p>$$
+\exists c_1, c_2, n_0: \forall n \geqslant n_0, 0 \leqslant c_1 \cdot 2^{n / 2} \leqslant 2^n \leqslant c_2 \cdot 2^{n / 2}.
+$$</p><p>不等式同除以 $2^{n / 2}$，得：
+$$
+c_1 \leqslant 2^{n / 2} \leqslant c_2
+$$
+因为 $c_2$ 为常量，对任意大的 $n$，不等式不可能成立。</p><p>h. 成立。令 $g(n) = o(f(n))$，有：
+$$
+\exists c, n_0: \forall n \geqslant n_0, 0 \leqslant g(n) &lt; cf(n).
+$$
+需要证明：
+$$
+\exists c_1, c_2, n_0: \forall n \geqslant n_0, 0 \leqslant c_1f(n) \leqslant f(n) + g(n) \leqslant c_2f(n).
+$$
+令 $c_1 = 1$，$c_2 = c + 1$，不等式成立。</p><h3 id=3-5>3-5</h3><p>a.</p><div>$$
+f(n) = \begin{cases}
+O(g(n)) \text{ and } \mathop \Omega \limits^\infty(g(n)) & \text{if $f(n) = \Theta(g(n))$}, \\
+O(g(n)) & \text{if $0 \leqslant f(n) \leqslant cg(n)$}, \\
+\mathop \Omega \limits^\infty(g(n)) & \text{if $0 \leqslant cg(n) \leqslant f(n)$, 对无穷多的整数 $n$}.
+\end{cases}
+$$</div>b. 优点：可以刻画所有函数之间的关系。<p>缺点：刻画不够精确。</p><p>c. 对任意两个函数 $f(n)$ 和 $g(n)$，如果 $f(n) = \Theta(g(n))$，有：</p><div>$$
+\begin{aligned}
+f(n) & = O'(g(n)) \\
+f(n) & = \Omega(g(n)) \\
+\end{aligned}
+$$</div><p>反之则不成立。</p><p>d. $\tilde\Omega$ 记号的定义：</p><div>$$
+\begin{aligned}
+\tilde\Omega(g(n)) = \{f(n): &\ 存在正常量\ c, k\ 和\ n_0\ 使得对所有\ n \geqslant n_0\ 有 \\
+& 0 \leqslant  cg(n)\lg^k(n) \leqslant f(n)\}.
+\end{aligned}
+$$</div>$\tilde\Theta$ 记号的定义：
+$$
+\begin{aligned}
+\tilde{\Theta}(g(n)) = \{f(n): &\ 存在正常量\ c_1, c_2, k_1, k_2\ 和\ n_0\ 使得对所有\ n \geqslant n_0\ 有 \\
+& 0 \leqslant c_1 g(n) \lg^{k_1}(n) \leqslant f(n) \leqslant c_2g (n) \lg^{k_2}(n) \}.
+\end{aligned}
+$$
+对任意两个函数 $f(n)$ 和 $g(n)$，有：
+$$
+f(n) = \tilde\Theta(g(n))
+$$
+当且仅当：
+$$
+f(n) = \tilde O(g(n))\quad \text{and}\quad f(n) = \tilde\Omega(g(n))
+$$<h3 id=3-6>3-6</h3><table><thead><tr><th>$f(n)$</th><th>$c$</th><th>$f_c^*(n)$</th></tr></thead><tbody><tr><td>$n-1$</td><td>0</td><td>$\Theta(n)$</td></tr><tr><td>$\lg n$</td><td>1</td><td>$\Theta(\lg^* n)$</td></tr><tr><td>$n / 2$</td><td>1</td><td>$\Theta(\lg n)$</td></tr><tr><td>$n / 2$</td><td>2</td><td>$\Theta(\lg n)$</td></tr><tr><td>$\sqrt n$</td><td>2</td><td>$\Theta(\lg \lg n)$</td></tr><tr><td>$\sqrt n$</td><td>1</td><td>NA</td></tr><tr><td>$n^{1 / 3}$</td><td>2</td><td>$\Theta(\log_3 \lg n)$</td></tr><tr><td>$n / \lg n$</td><td>2</td><td>$\omega(\lg \lg n)$，$o(\lg n)$</td></tr></tbody></table><p>参考答案：https://github.com/walkccc/CLRS。</p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-tag><span><a href=/tags/clrs/>CLRS</a></span></div><div class=post-info-line><div class=post-info-mod><span>更新于 2021-12-07&nbsp;<a class=git-hash href=https://github.com/lumicia/lumicia/github.io/commit/b25413cdda335ee3b50dfaaad0f728bf5d9e28e3 target=_blank title="committed&nbsp;by&nbsp;lumicia(arxzs1057@gmail.com)&nbsp;b25413c:&nbsp;Add CLRS Chap4">
+<i class="fas fa-hashtag fa-fw"></i>b25413c</a></span></div><div class=post-info-mod><span><a class=link-to-markdown href=/clrs-chap3-exercises/index.md target=_blank>阅读原始文档</a></span></div></div><div class=post-info-share><span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://lumicia.github.io/clrs-chap3-exercises/ data-title="算法导论 Chap3 习题" data-via=xxxx data-hashtags=CLRS><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://lumicia.github.io/clrs-chap3-exercises/ data-hashtag=CLRS><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 Hacker News" data-sharer=hackernews data-url=https://lumicia.github.io/clrs-chap3-exercises/ data-title="算法导论 Chap3 习题"><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://lumicia.github.io/clrs-chap3-exercises/ data-title="算法导论 Chap3 习题"><i class="fab fa-line fa-fw"></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://lumicia.github.io/clrs-chap3-exercises/ data-title="算法导论 Chap3 习题"><i class="fab fa-weibo fa-fw"></i></a></span></div></div><div class=post-nav><a href=/clrs-chap3/ class=prev rel=prev title="算法导论 Chap3：函数的增长"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a>
+<a href=/clrs-chap4/ class=next rel=next title="算法导论 Chap4：分治策略">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div></div><div id=comments class=single-card></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.105.0">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/khusika/FeelIt target=_blank rel="noopener noreffer" title="FeelIt 1.0.1"><i class="fas fa-hand-holding-heart fa-fw"></i> FeelIt</a></div><div class=footer-line itemscope itemtype=http://schema.org/CreativeWork><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://github.com/lumicia>lumicia</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div><script>"serviceWorker"in navigator&&(navigator.serviceWorker.register("/sw.min.js?version=1.0.1",{scope:"/"}).then(()=>{console.info("lumicia\u00A0Service Worker Registered")},e=>console.error("lumicia\u00A0Service Worker registration failed: ",e)),navigator.serviceWorker.ready.then(()=>{console.info("lumicia\u00A0Service Worker Ready")}))</script></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部><i class="fas fa-chevron-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment-alt fa-fw"></i></a></div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/copy-tex.min.css><script src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.0/dist/autocomplete.min.js></script><script src=https://cdn.jsdelivr.net/npm/algoliasearch@4.10.3/dist/algoliasearch-lite.umd.min.js></script><script src=https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js></script><script src=https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js></script><script src=https://cdn.jsdelivr.net/npm/sharer.js@0.4.1/sharer.min.js></script><script src=https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js></script><script src=https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js></script><script src=https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/copy-tex.min.js></script><script src=https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/mhchem.min.js></script><script>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:30},comment:{},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{algoliaAppID:"UAL0NNJWXE",algoliaIndex:"index.zh-cn",algoliaSearchKey:"7b7fbdfb7ee82ee61901f2c6b09b05be",highlightTag:"em",maxResultLength:10,noResultsFound:"没有找到结果",snippetLength:50,type:"algolia"}}</script><script src=/js/theme.min.js></script></body></html>
